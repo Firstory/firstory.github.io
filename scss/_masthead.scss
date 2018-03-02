@@ -20,11 +20,36 @@ header.masthead {
         }
     }
     .device-container {
-        max-width: 325px;
+        max-width: 420px;
         margin-right: auto;
         margin-left: auto;
         .screen img {
             border-radius: 3px;
+        }
+    }
+    .download {
+        @media(min-width: 768px) {
+            .android {
+                margin-right: 5px;
+            }
+            .ios {
+                margin-left: 5px;
+            }
+        }
+        margin-bottom: 10px;
+        .download-link {
+            display: block;
+            margin-bottom: 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            img {
+                height: 60px;
+            }
+            @media(min-width: 768px) {
+                display: inline-block;
+                margin-bottom: 0;
+            }
         }
     }
     @media (min-width: 992px) {
@@ -41,7 +66,7 @@ header.masthead {
             }
         }
         .device-container {
-            max-width: 325px;
+            max-width: 420px;
         }
     }
 }
