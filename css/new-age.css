@@ -68,6 +68,12 @@ section h2 {
   }
 }
 
+@media (min-width: 355px) {
+  .xs-break {
+    display: none;
+  }
+}
+
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
   background-color: white;
@@ -302,6 +308,12 @@ section.contact {
   section.contact .cta-text {
     font-size: 1.35rem !important;
     font-weight: bolder;
+  }
+}
+
+@media (max-width: 355px) {
+  section.contact .cta-text {
+    line-height: 2.5rem;
   }
 }
 

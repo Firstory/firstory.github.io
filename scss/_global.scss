@@ -57,6 +57,12 @@ section {
 
 @media (min-width: 992px) {
    .rwd-break {
-      display: none; 
+        display: none; 
+    }
+}
+
+@media (min-width: 355px) {
+    .xs-break {
+        display: none;
     }
 }
