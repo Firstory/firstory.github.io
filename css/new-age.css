@@ -170,7 +170,7 @@ header.masthead .header-content h1 {
 }
 
 header.masthead .device-container {
-  max-width: 420px;
+  max-width: 325px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -227,7 +227,7 @@ header.masthead .download .download-link img {
     font-size: 50px;
   }
   header.masthead .device-container {
-    max-width: 420px;
+    max-width: 345px;
   }
 }
 
