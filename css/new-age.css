@@ -274,6 +274,8 @@ section.features .feature-item i {
 }
 
 section.contact {
+  color: #ffffff;
+  background-color: #ff83a4;
   text-align: center;
 }
 
@@ -372,8 +374,8 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 .btn-outline:hover, .btn-outline:focus, .btn-outline:active, .btn-outline.active {
   color: white;
-  border-color: #fdcc52;
-  background-color: #fdcc52;
+  border-color: #f8528a;
+  background-color: #f8528a;
 }
 
 .btn {
