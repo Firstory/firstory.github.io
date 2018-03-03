@@ -2,6 +2,9 @@
 section.features {
     .section-heading {
         margin-bottom: 100px;
+        @media(max-width: 992px) {
+          text-align: left !important;
+        }
         h2 {
             margin-top: 0;
         }

@@ -48,5 +48,15 @@ section {
     padding: 100px 0;
     h2 {
         font-size: 50px;
+        @media (max-width: 992px) {
+          font-size: 35px;
+          font-weight: 300;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+   .rwd-break {
+      display: none; 
     }
 }

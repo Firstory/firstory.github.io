@@ -3,6 +3,12 @@ section.contact {
     color: #ffffff;
     background-color: $theme-secondary;
     text-align: center;
+    @media (max-width: 992px) {
+        .cta-text {
+            font-size: 1.35rem !important;
+            font-weight: bolder;
+        }
+    }
     h2 {
         margin-top: 0;
         margin-bottom: 25px;

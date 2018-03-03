@@ -55,6 +55,19 @@ section h2 {
   font-size: 50px;
 }
 
+@media (max-width: 992px) {
+  section h2 {
+    font-size: 35px;
+    font-weight: 300;
+  }
+}
+
+@media (min-width: 992px) {
+  .rwd-break {
+    display: none;
+  }
+}
+
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
   background-color: white;
@@ -229,6 +242,12 @@ section.features .section-heading {
   margin-bottom: 100px;
 }
 
+@media (max-width: 992px) {
+  section.features .section-heading {
+    text-align: left !important;
+  }
+}
+
 section.features .section-heading h2 {
   margin-top: 0;
 }
@@ -277,6 +296,13 @@ section.contact {
   color: #ffffff;
   background-color: #ff83a4;
   text-align: center;
+}
+
+@media (max-width: 992px) {
+  section.contact .cta-text {
+    font-size: 1.35rem !important;
+    font-weight: bolder;
+  }
 }
 
 section.contact h2 {
@@ -386,6 +412,6 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .btn-xl {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   padding: 15px 45px;
 }
