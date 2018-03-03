@@ -172,6 +172,11 @@ header.masthead .download {
   margin-bottom: 10px;
 }
 
+header.masthead .download .qrcode {
+  width: 202.5px;
+  height: 202.5px;
+}
+
 @media (min-width: 768px) {
   header.masthead .download .android {
     margin-right: 5px;

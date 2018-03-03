@@ -28,6 +28,10 @@ header.masthead {
         }
     }
     .download {
+        .qrcode {
+          width: 202.5px;
+          height: 202.5px;
+        }
         @media(min-width: 768px) {
             .android {
                 margin-right: 5px;
