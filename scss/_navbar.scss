@@ -5,11 +5,10 @@
     @include transition-all;
     @include heading-font;
     .navbar-brand {
-        color: $theme-primary;
+        color: $theme-secondary;
         @include heading-font;
         &:hover,
         &:focus {
-            color: darken($theme-primary, 10%);
         }
     }
     .navbar-toggler {
@@ -23,7 +22,7 @@
                 font-size: 11px;
                 @include alt-font;
                 &.active {
-                    color: $theme-primary !important;
+                    color: #ffffff !important;
                     background-color: transparent;
                     &:hover {
                         background-color: transparent;
@@ -34,7 +33,7 @@
             > a:focus {
                 color: $gray-darker;
                 &:hover {
-                    color: $theme-primary;
+                    color: #ffffff;
                 }
             }
         }
@@ -43,7 +42,7 @@
         border-color: transparent;
         background-color: transparent;
         .navbar-brand {
-            color: fade(white, 70%);
+            color: #ffffff;
             &:hover,
             &:focus {
                 color: white;
@@ -60,17 +59,15 @@
             border-color: fade-out($gray-darker, .9);
             background-color: white;
             .navbar-brand {
-                color: $gray-darker;
+                color: $theme-secondary;
                 &:hover,
                 &:focus {
-                    color: $theme-primary;
                 }
             }
             .navbar-nav > li > a,
             .navbar-nav > li > a:focus {
-                color: $gray-darker;
+                color: $theme-secondary;
                 &:hover {
-                    color: $theme-primary;
                 }
             }
         }
