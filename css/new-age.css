@@ -106,7 +106,7 @@ section h2 {
 }
 
 #mainNav .navbar-nav > li > a.active {
-  color: #ffffff !important;
+  color: #ff83a4 !important;
   background-color: transparent;
 }
 
@@ -121,7 +121,7 @@ section h2 {
 
 #mainNav .navbar-nav > li > a:hover,
 #mainNav .navbar-nav > li > a:focus:hover {
-  color: #ffffff;
+  color: #ff83a4;
 }
 
 @media (min-width: 992px) {
