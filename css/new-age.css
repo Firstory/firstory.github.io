@@ -39,6 +39,7 @@ h6 {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
+  font-size: 1.15rem;
 }
 
 p {
@@ -83,6 +84,7 @@ section h2 {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
+  font-size: 1.15rem;
 }
 
 #mainNav .navbar-brand {
@@ -90,6 +92,7 @@ section h2 {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
+  font-size: 1.15rem;
 }
 
 #mainNav .navbar-toggler {
@@ -99,7 +102,7 @@ section h2 {
 }
 
 #mainNav .navbar-nav > li > a {
-  font-size: 11px;
+  font-size: 14px;
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
   letter-spacing: 2px;
   text-transform: uppercase;

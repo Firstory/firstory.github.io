@@ -19,7 +19,7 @@
     .navbar-nav {
         > li {
             > a {
-                font-size: 11px;
+                font-size: 14px;
                 @include alt-font;
                 &.active {
                     color: $theme-secondary !important;
