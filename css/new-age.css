@@ -40,6 +40,7 @@ h6 {
   font-weight: 200;
   letter-spacing: 1px;
   font-size: 1.15rem;
+  line-height: 1.5;
 }
 
 p {
@@ -85,6 +86,7 @@ section h2 {
   font-weight: 200;
   letter-spacing: 1px;
   font-size: 1.15rem;
+  line-height: 1.5;
 }
 
 #mainNav .navbar-brand {
@@ -93,6 +95,7 @@ section h2 {
   font-weight: 200;
   letter-spacing: 1px;
   font-size: 1.15rem;
+  line-height: 1.5;
 }
 
 #mainNav .navbar-toggler {
@@ -173,7 +176,12 @@ header.masthead {
 header.masthead .header-content {
   max-width: 500px;
   margin-bottom: 100px;
-  text-align: center;
+}
+
+@media (min-width: 992px) {
+  header.masthead .header-content {
+    text-align: left !important;
+  }
 }
 
 header.masthead .header-content h1 {
