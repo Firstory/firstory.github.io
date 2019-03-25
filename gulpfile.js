@@ -31,8 +31,4 @@ function assets() {
   return src('src/assets/*').pipe(dest('public/assets'));
 }
 
-function publish(cb) {
-  cb();
-}
-
-exports.default = series(clean, parallel(css, html, assets), publish);
+exports.default = series(clean, parallel(css, html, assets));
