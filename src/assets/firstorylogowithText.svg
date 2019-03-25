@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="236" height="60" viewBox="0 0 236 60">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8af8fa"/>
+      <stop offset="1" stop-color="#55b1ef"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2" data-name="Group 2" transform="translate(-136 -59)">
+    <rect id="Rectangle_9" data-name="Rectangle 9" width="60" height="60" transform="translate(136 59)" fill="none"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(-1002 -481.5)">
+      <path id="Union_1" data-name="Union 1" d="M994,511.672a5.566,5.566,0,1,1,5.566,5.566A5.566,5.566,0,0,1,994,511.672Zm0-9.893a11.13,11.13,0,0,1,11.131-11.129h22.262a11.131,11.131,0,0,1-11.131,11.129h-9.74c-9.74,0-12.523,2.783-12.523,2.783Zm32-15.149h-9.739a11.131,11.131,0,0,1-11.131-11.13h22.262a11.131,11.131,0,0,1,11.131,11.13v2.782S1035.741,486.63,1026,486.63Z" transform="translate(152 74)" stroke="rgba(0,0,0,0)" stroke-width="1" fill="url(#linear-gradient)"/>
+    </g>
+    <text id="Firstory" transform="translate(216 104)" fill="#414141" font-size="40" font-family="Montserrat-SemiBold, Montserrat" font-weight="600"><tspan x="0" y="0">Firstory</tspan></text>
+  </g>
+</svg>
