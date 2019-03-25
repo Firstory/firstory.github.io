@@ -5,10 +5,6 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const htmlmin = require('gulp-html-minifier2');
 
-function clean(cb) {
-  rimraf('public', cb);
-}
-
 function css() {
   const plugins = [
     autoprefixer({
@@ -31,4 +27,4 @@ function assets() {
   return src('src/assets/*').pipe(dest('public/assets'));
 }
 
-exports.default = series(clean, parallel(css, html, assets));
+exports.default = series(parallel(css, html, assets));

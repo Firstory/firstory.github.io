@@ -26,25 +26,46 @@ img {
   position: fixed;
   background-color: #fff;
   top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.firstory_logo {
   display: flex;
   align-items: center;
 }
 
-.firstory_logo {
-  margin: auto;
-  margin-left: 0em;
-  width: 8em;
+.firstory_logo img {
+  height: 3em;
+  width: 3em;
+}
+
+.firstory_title {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-left: 10px;
+}
+
+.hamburger-container {
+  flex: 1;
 }
 
 .hamburger {
   margin: auto;
-  margin-right: 2.5em;
+  margin-right: 0em;
   width: 1.5em;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .socialMedia a {
   opacity: 0;
-  margin-left: -10em;
 }
 
 .socialMedia a:hover {
@@ -259,6 +280,12 @@ img {
 
 /* Media Queries */
 
+@media (max-width: 700px) {
+  .socialMedia {
+    display: none;
+  }
+}
+
 @media (min-width: 701px) and (max-width: 900px) {
   .grid {
     display: grid;
@@ -271,20 +298,16 @@ img {
 
   .socialMedia a {
     opacity: 1;
-    margin-left: 0em;
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
     color: #414141;
-    margin-right: 2em;
+    margin-left: 2em;
+    margin-right: 0em;
   }
 
   .socialMedia {
     grid-column: 8/13;
-  }
-
-  .firstory_logo {
-    width: 8em;
   }
 
   .hamburger {
@@ -401,12 +424,12 @@ img {
 
   .socialMedia a {
     opacity: 1;
-    margin-left: 0em;
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
     color: #414141;
-    margin-right: 3em;
+    margin-left: 3em;
+    margin-right: 0em;
   }
 
   .socialMedia {
@@ -414,35 +437,31 @@ img {
     justify-self: center;
   }
 
-  .firstory_logo {
-    width: 8em;
-  }
-
   .hamburger {
     display: none;
   }
 
   .slogan {
-    grid-column: 1 / span 4;
+    grid-column: 2 / span 3;
     text-align: left;
     width: 10em;
     margin: 0;
   }
 
   .gettheapp {
-    grid-column: 1 / span 3;
+    grid-column: 2 / span 3;
     text-align: left;
   }
 
   .btn1 {
-    grid-column: 1/2;
+    grid-column: 2/2;
     width: 10em;
     justify-self: start;
     margin-top: 2em;
   }
 
   .btn2 {
-    grid-column: 2/3;
+    grid-column: 3/3;
     width: 10em;
     justify-self: start;
     margin-top: 2em;
