@@ -23,8 +23,21 @@ function html() {
     .pipe(dest('public/'));
 }
 
-function assets() {
-  return src('src/assets/*').pipe(dest('public/assets'));
+function imageAssets() {
+  return src('src/assets/*').pipe(dest('public/assets/'));
 }
 
-exports.default = series(parallel(css, html, assets));
+function configAssets() {
+  return src([
+    'src/browserconfig.xml',
+    'src/manifest.json',
+  ]).pipe(dest('public/'));
+}
+
+function faviconAssets() {
+  return src('src/favicon/*').pipe(dest('public/favicon/'));
+}
+
+exports.default = series(
+  parallel(css, html, imageAssets, configAssets, faviconAssets),
+);
