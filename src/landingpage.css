@@ -225,17 +225,68 @@ img {
 /* section-c */
 
 .getstarted {
-  font-size: 2em;
-  text-align: center;
-  font-weight: bold;
-  width: 80%;
-  height: auto;
-  padding: 40px;
-  background-image: linear-gradient(to right, #31bff5, #c074f0 60%, #ff779f);
-  color: white;
+  width: 800px;
   margin: auto;
-  margin-top: 1.4em;
-  border-radius: 0px 50px 50px 50px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.getstarted .title {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.getstarted .row {
+  padding-top: 1.2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.getstarted .item {
+  width: 200px;
+  padding-top: 2em;
+}
+
+.getstarted .item-title {
+  padding-bottom: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.getstarted .item-image {
+  height: 200px;
+  width: 200px;
+  background-color: #222;
+}
+
+.getstarted .item-name {
+  padding-top: 1em;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.getstarted .button-row {
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5em;
+}
+
+.getstarted .button {
+  background: #ff86b5;
+  text-decoration: none;
+  color: white;
+  border-radius: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.getstarted .button-text {
+  font-size: 1.2em;
 }
 
 /* section-d */
@@ -283,6 +334,31 @@ img {
 @media (max-width: 700px) {
   .socialMedia {
     display: none;
+  }
+
+  .getstarted {
+    width: 90%;
+  }
+
+  .getstarted .row {
+    flex-wrap: wrap;
+  }
+
+  .getstarted .item {
+    width: 100px;
+  }
+
+  .getstarted .item-title {
+    font-size: 1em;
+  }
+
+  .getstarted .item-image {
+    height: 100px;
+    width: 100px;
+  }
+
+  .getstarted .item-name {
+    font-size: 1em;
   }
 }
 
@@ -392,10 +468,16 @@ img {
   }
 
   .getstarted {
-    grid-column: 1/13;
-    font-size: 3em;
-    padding: 1.3em;
-    margin-top: 1em;
+    width: 80%;
+  }
+
+  .getstarted .item {
+    width: 150px;
+  }
+
+  .getstarted .item-image {
+    height: 150px;
+    width: 150px;
   }
 
   .followus {
@@ -513,14 +595,6 @@ img {
 
   .black {
     margin-top: 16em;
-  }
-
-  .getstarted {
-    grid-column: 1/13;
-    width: 10em;
-    font-size: 5em;
-    padding: 1em;
-    margin-top: 1em;
   }
 
   .followus {
