@@ -225,15 +225,19 @@ img {
 /* section-c */
 
 .getstarted {
-  width: 800px;
+  width: 850px;
   margin: auto;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 5em;
+  margin-bottom: 5em;
 }
 
 .getstarted .title {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
+}
+
+.getstarted .subtitle {
+  padding-top: 0.2em;
 }
 
 .getstarted .row {
@@ -243,19 +247,20 @@ img {
 }
 
 .getstarted .item {
-  width: 200px;
+  width: 250px;
   padding-top: 2em;
+  cursor: pointer;
 }
 
 .getstarted .item-title {
   padding-bottom: 1em;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 600;
 }
 
 .getstarted .item-image {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   background-color: #222;
 }
 
@@ -293,7 +298,7 @@ img {
 
 .followus {
   text-align: center;
-  font-size: 1.8em;
+  font-size: 2em;
   font-weight: bold;
   width: 80%;
   height: auto;
@@ -345,16 +350,16 @@ img {
   }
 
   .getstarted .item {
-    width: 100px;
+    width: 120px;
   }
 
   .getstarted .item-title {
-    font-size: 1em;
+    font-size: 0.9em;
   }
 
   .getstarted .item-image {
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
   }
 
   .getstarted .item-name {
@@ -475,9 +480,17 @@ img {
     width: 150px;
   }
 
+  .getstarted .item-title {
+    font-size: 1em;
+  }
+
   .getstarted .item-image {
     height: 150px;
     width: 150px;
+  }
+
+  .getstarted .item-name {
+    font-size: 1.2em;
   }
 
   .followus {
