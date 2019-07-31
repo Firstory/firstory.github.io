@@ -250,6 +250,8 @@ img {
   width: 250px;
   padding-top: 2em;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .getstarted .item-title {
