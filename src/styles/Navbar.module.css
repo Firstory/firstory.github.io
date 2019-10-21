@@ -1,0 +1,36 @@
+.container {
+  width: 100%;
+  max-width: 1170px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 48px;
+  padding-right: 48px;
+  margin: auto;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+}
+
+.title {
+  flex: 1;
+  font-size: 1.2em;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.navItem {
+  padding-left: 2em;
+}
+
+.navItem a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navItem:hover a {
+  color: #f75786;
+}
