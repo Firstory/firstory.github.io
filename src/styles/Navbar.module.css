@@ -70,7 +70,7 @@
 
   .menu {
     display: block;
-    position: absolute;
+    position: fixed;
     background: white;
     width: 50%;
     height: 100%;
