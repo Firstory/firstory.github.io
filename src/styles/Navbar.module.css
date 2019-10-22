@@ -1,3 +1,16 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  background: white;
+}
+
 .container {
   width: 100%;
   max-width: 1170px;
@@ -33,4 +46,61 @@
 
 .navItem:hover a {
   color: #f75786;
+}
+
+.menu {
+  display: none;
+}
+
+.menuIcon {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .navItem {
+    display: none;
+  }
+
+  .menuIcon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    background: white;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: -50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    transition: ease 0.5s;
+  }
+
+  .menu.open {
+    right: 0;
+  }
+
+  .menuClose {
+    font-size: 4em;
+    color: #414141;
+    cursor: pointer;
+    margin-bottom: 2em;
+  }
+
+  .menuItem {
+    font-size: 2em;
+    font-weight: 700;
+    padding-bottom: 1em;
+  }
+
+  .menuItem a {
+    text-decoration: none;
+    color: #414141;
+  }
 }

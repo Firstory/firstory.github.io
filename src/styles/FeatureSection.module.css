@@ -14,6 +14,7 @@
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .left {
@@ -47,4 +48,31 @@
 
 .item:nth-child(3) {
   background-color: rgba(69, 89, 141, 0.1);
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 1.5em;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    flex: auto;
+  }
+
+  .left {
+    padding-bottom: 2em;
+  }
+
+  .right {
+    padding: 0;
+  }
+
+  .image {
+    display: block;
+    margin: auto;
+    width: 250px;
+    height: auto;
+  }
 }

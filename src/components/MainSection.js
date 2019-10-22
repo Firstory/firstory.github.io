@@ -27,8 +27,12 @@ function MainSection() {
           </a>
         </div>
       </div>
-      <img className={styles.pic} src={Pic1} alt="pic1" />
-      <img className={styles.pic} src={Pic2} alt="pic2" />
+      <div className={styles.imageContainer}>
+        <img className={styles.image} src={Pic1} alt="pic1" />
+      </div>
+      <div className={styles.imageContainer}>
+        <img className={styles.image} src={Pic2} alt="pic2" />
+      </div>
     </section>
   );
 }
