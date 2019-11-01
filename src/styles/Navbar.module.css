@@ -35,17 +35,28 @@
 }
 
 .navItem {
-  padding-left: 2em;
+  margin-left: 1em;
 }
 
 .navItem a {
+  display: block;
   color: black;
   text-decoration: none;
   font-weight: 600;
+  padding: 0 1em;
+  height: 2.4em;
+  line-height: 2.4em;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .navItem:hover a {
   color: #f75786;
+}
+
+.navItem.button a {
+  background-color: #ff86b5;
+  color: white;
 }
 
 .menu {

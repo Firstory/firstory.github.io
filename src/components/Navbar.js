@@ -13,6 +13,9 @@ function Navbar() {
         <div className={styles.container}>
           <img src={Logo} className={styles.logo} alt="Logo" />
           <div className={styles.title}>Firstory</div>
+          <nav className={cx(styles.navItem, styles.button)}>
+            <a href="https://open.firstory.me/browse">開始製作</a>
+          </nav>
           <nav className={styles.navItem}>
             <a href="https://www.instagram.com/firstory_lab/">Instagram</a>
           </nav>
