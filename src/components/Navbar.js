@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import { Link } from 'react-router-dom';
 import styles from '../styles/Navbar.module.css';
 import Logo from '../assets/logo.svg';
 import Menu from '../assets/menu.svg';
@@ -13,6 +14,9 @@ function Navbar() {
         <div className={styles.container}>
           <img src={Logo} className={styles.logo} alt="Logo" />
           <div className={styles.title}>Firstory</div>
+          <nav className={styles.navItem}>
+            <Link to="/pricing">資費方案</Link>
+          </nav>
           <nav className={cx(styles.navItem, styles.button)}>
             <a href="https://open.firstory.me/browse">開始製作</a>
           </nav>
