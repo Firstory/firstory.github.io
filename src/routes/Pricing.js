@@ -40,7 +40,7 @@ function Pricing() {
           <div className={styles.planPrice}>免費</div>
           <div className={styles.planButton}>開始使用</div>
           <div className={styles.planMonthly}>
-            每個月 <div>一小時</div>上傳時間
+            每個月 <div className={styles.planLimit}>1 小時</div>上傳時間
           </div>
           {Object.keys(featureList).map(f => {
             let className;
@@ -56,12 +56,20 @@ function Pricing() {
             );
           })}
         </div>
-        <div className={styles.planBlock}>
-          <div className={styles.planName}>基本方案</div>
-          <div className={styles.planPrice}>免費</div>
-          <div>開始使用</div>
-          <div className={styles.planMonthly}>
-            每個月 <div>一小時</div>上傳時間
+        <div className={cx(styles.planBlock, styles.planBlockPremium)}>
+          <div className={cx(styles.planName, styles.planTextPremium)}>
+            標準方案
+          </div>
+          <div className={cx(styles.planPrice, styles.planTextPremium)}>
+            NT$249 /月
+          </div>
+          <div className={styles.planButtonStroke}>開始使用</div>
+          <div className={cx(styles.planMonthly, styles.planTextPremium)}>
+            每個月{' '}
+            <div className={cx(styles.planLimit, styles.planTextPremium)}>
+              無限制
+            </div>
+            上傳時間
           </div>
           {Object.keys(featureList).map(f => {
             let className;
@@ -76,18 +84,25 @@ function Pricing() {
               className = styles.unavailableFeature;
             }
             return (
-              <div key={f} className={cx(styles.planText, className)}>
+              <div
+                key={f}
+                className={cx(
+                  styles.planText,
+                  className,
+                  styles.planTextPremium,
+                )}
+              >
                 {i18n.zh.pricing[f]}
               </div>
             );
           })}
         </div>
         <div className={styles.planBlock}>
-          <div className={styles.planName}>基本方案</div>
-          <div className={styles.planPrice}>免費</div>
-          <div>開始使用</div>
+          <div className={styles.planName}>企業方案</div>
+          <div className={styles.planPrice}>請聯絡我們</div>
+          <div className={styles.planButton}>聯絡我們</div>
           <div className={styles.planMonthly}>
-            每個月 <div>一小時</div>上傳時間
+            每個月 <div className={styles.planLimit}>無限制</div>上傳時間
           </div>
           {Object.keys(featureList).map(f => {
             let className;

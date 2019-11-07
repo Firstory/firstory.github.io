@@ -23,29 +23,48 @@
 }
 
 .planName {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 600;
   color: #4d4d4d;
 }
 
 .planPrice {
   padding-top: 36px;
-  padding-bottom: 54px;
-  font-size: 32px;
+  padding-bottom: 48px;
+  font-size: 31px;
   font-weight: 600;
   color: #10cfaa;
+  letter-spacing: 2.73px;
 }
 
 .planButton {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  letter-spacing: 1.91px;
+  padding-top: 19px;
+  padding-bottom: 19px;
   width: 100%;
   text-align: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: white;
   border-radius: 10px;
   background: linear-gradient(to right, rgb(134, 84, 249), rgb(44, 123, 231));
+  margin-bottom: 32px;
+}
+
+.planButtonStroke {
+  letter-spacing: 1.91px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  margin-bottom: 32px;
 }
 
 .planSubTitle {
@@ -61,8 +80,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding-left: 40;
-  padding-right: 40;
+  padding-top: 60px;
 }
 
 .planBlock {
@@ -79,11 +97,37 @@
   margin-right: 20px;
 }
 
+.planBlockPremium {
+  background: linear-gradient(to bottom, rgb(244, 41, 99), rgb(240, 151, 20));
+}
+
+.planMonthly {
+  font-size: 22px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #4d4d4d;
+}
+
 .planText {
-  font-size: 28px;
+  font-size: 22px;
   padding-top: 15px;
   padding-bottom: 15px;
   font-weight: 600;
+  text-align: left;
+  width: 100%;
+}
+
+.planTextPremium {
+  color: white !important;
+}
+
+.planLimit {
+  font-size: 40px;
+  color: #4c63db;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .availableFeature {
