@@ -1,5 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
+import mixpanel from 'mixpanel-browser';
 import styles from '../styles/Pricing.module.css';
 import { i18n } from '../i18n';
 import { ReactComponent as ComingSoon } from '../assets/comingsoon.svg';
@@ -29,6 +30,9 @@ const featureList = {
   multiShow: enterprise | developing,
 };
 
+mixpanel.init('1fa276e4e72e21867df7c429e861eecf');
+window.mixpanel = mixpanel;
+
 function Pricing() {
   return (
     <section className={styles.container}>
@@ -45,7 +49,10 @@ function Pricing() {
           <div className={styles.planPrice}>免費</div>
           <div
             className={styles.planButton}
-            onClick={() => alert('即將於 12 月推出！敬請期待！')}
+            onClick={() => {
+              mixpanel.track('Interest in Payment', { plan: 'FREE' });
+              alert('即將於 12 月推出！敬請期待！');
+            }}
           >
             開始使用
           </div>
@@ -89,7 +96,10 @@ function Pricing() {
           </div>
           <div
             className={styles.planButtonStroke}
-            onClick={() => alert('即將於 12 月推出！敬請期待！')}
+            onClick={() => {
+              mixpanel.track('Interest in Payment', { plan: 'PREMIUM' });
+              alert('即將於 12 月推出！敬請期待！');
+            }}
           >
             開始使用
           </div>
@@ -143,7 +153,10 @@ function Pricing() {
           <div className={styles.planPrice}>請聯絡我們</div>
           <div
             className={styles.planButton}
-            onClick={() => alert('即將於 12 月推出！敬請期待！')}
+            onClick={() => {
+              mixpanel.track('Interest in Payment', { plan: 'ENTERPRISE' });
+              alert('即將於 12 月推出！敬請期待！');
+            }}
           >
             聯絡我們
           </div>
