@@ -2,6 +2,11 @@ import React from 'react';
 import cx from 'classnames';
 import styles from '../styles/Pricing.module.css';
 import { i18n } from '../i18n';
+import { ReactComponent as ComingSoon } from '../assets/comingsoon.svg';
+import { ReactComponent as Available } from '../assets/have.svg';
+import { ReactComponent as NotAvailabe } from '../assets/havent.svg';
+import { ReactComponent as HotSale } from '../assets/hotsale.svg';
+import { ReactComponent as Rocket } from '../assets/rocket.svg';
 
 const free = 1;
 const premium = 2;
@@ -38,32 +43,56 @@ function Pricing() {
         <div className={styles.planBlock}>
           <div className={styles.planName}>基本方案</div>
           <div className={styles.planPrice}>免費</div>
-          <div className={styles.planButton}>開始使用</div>
+          <div
+            className={styles.planButton}
+            onClick={() => alert('即將於 12 月推出！敬請期待！')}
+          >
+            開始使用
+          </div>
           <div className={styles.planMonthly}>
             每個月 <div className={styles.planLimit}>1 小時</div>上傳時間
           </div>
           {Object.keys(featureList).map(f => {
             let className;
+            let Icon;
+            let alt;
             if (featureList[f] === (free | premium | enterprise)) {
               className = styles.availableFeature;
+              Icon = Available;
+              alt = 'Available';
             } else {
               className = styles.unavailableFeature;
+              Icon = NotAvailabe;
+              alt = 'NotAvailable';
             }
             return (
               <div key={f} className={cx(styles.planText, className)}>
+                <Icon alt={alt} className={styles.icon} />
                 {i18n.zh.pricing[f]}
               </div>
             );
           })}
         </div>
         <div className={cx(styles.planBlock, styles.planBlockPremium)}>
+          <div className={styles.absoluteRow}>
+            <Rocket alt="Rocket" className={styles.rocket} />
+            <HotSale alt="Hot sale" className={styles.hotSale} />
+          </div>
           <div className={cx(styles.planName, styles.planTextPremium)}>
             標準方案
           </div>
           <div className={cx(styles.planPrice, styles.planTextPremium)}>
-            NT$249 /月
+            NT$249 / 月
           </div>
-          <div className={styles.planButtonStroke}>開始使用</div>
+          <div className={styles.planPriceDescription}>
+            年繳{'\n'}或者月繳 NT$299 / 月
+          </div>
+          <div
+            className={styles.planButtonStroke}
+            onClick={() => alert('即將於 12 月推出！敬請期待！')}
+          >
+            開始使用
+          </div>
           <div className={cx(styles.planMonthly, styles.planTextPremium)}>
             每個月{' '}
             <div className={cx(styles.planLimit, styles.planTextPremium)}>
@@ -73,15 +102,23 @@ function Pricing() {
           </div>
           {Object.keys(featureList).map(f => {
             let className;
+            let Icon;
+            let alt;
             if (
               featureList[f] === (free | premium | enterprise) ||
               featureList[f] === (premium | enterprise)
             ) {
               className = styles.availableFeature;
+              Icon = Available;
+              alt = 'Available';
             } else if (featureList[f] === (premium | enterprise | developing)) {
               className = styles.developingFeature;
+              Icon = ComingSoon;
+              alt = 'Coming Soon';
             } else {
-              className = styles.unavailableFeature;
+              className = styles.unavailablePremium;
+              Icon = NotAvailabe;
+              alt = 'NotAvailable';
             }
             return (
               <div
@@ -92,6 +129,10 @@ function Pricing() {
                   styles.planTextPremium,
                 )}
               >
+                <Icon
+                  alt={alt}
+                  className={cx(styles.icon, styles.iconPremium, className)}
+                />
                 {i18n.zh.pricing[f]}
               </div>
             );
@@ -100,33 +141,51 @@ function Pricing() {
         <div className={styles.planBlock}>
           <div className={styles.planName}>企業方案</div>
           <div className={styles.planPrice}>請聯絡我們</div>
-          <div className={styles.planButton}>聯絡我們</div>
+          <div
+            className={styles.planButton}
+            onClick={() => alert('即將於 12 月推出！敬請期待！')}
+          >
+            聯絡我們
+          </div>
           <div className={styles.planMonthly}>
             每個月 <div className={styles.planLimit}>無限制</div>上傳時間
           </div>
           {Object.keys(featureList).map(f => {
             let className;
+            let alt;
+            let Icon;
             if (
               featureList[f] === (free | premium | enterprise) ||
               featureList[f] === (premium | enterprise) ||
               featureList[f] === enterprise
             ) {
               className = styles.availableFeature;
+              alt = 'Available';
+              Icon = Available;
             } else if (
               featureList[f] === (premium | enterprise | developing) ||
               featureList[f] === (enterprise | developing)
             ) {
               className = styles.developingFeature;
+              alt = 'Coming Soon';
+              Icon = ComingSoon;
             } else {
               className = styles.unavailableFeature;
+              alt = 'Not Available';
+              Icon = NotAvailabe;
             }
             return (
               <div key={f} className={cx(styles.planText, className)}>
+                <Icon alt={alt} className={cx(styles.icon)} />
                 {i18n.zh.pricing[f]}
               </div>
             );
           })}
         </div>
+      </div>
+      <div className={styles.iconHint}>
+        <ComingSoon alt="Coming Soon" className={cx(styles.icon)} />
+        代表即將推出
       </div>
     </section>
   );
