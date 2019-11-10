@@ -209,12 +209,13 @@
   position: absolute;
   flex-direction: row;
   align-items: center;
-  top: -120px;
-  left: 0px;
+  top: -50px;
+  width: 100%;
+  justify-content: center;
 }
 
 .rocket {
-  position: relative;
+  position: absolute;
   left: -30px;
   scale: 0.7;
 }
