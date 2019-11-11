@@ -158,25 +158,23 @@
   color: #4d4d4d;
 }
 
-
-
 .planTextPremium {
   color: white;
 }
 
 .icon {
-  scale: 0.8;
+  transform: scale(0.8);
 }
 
 .icon.iconPremium path {
   fill: white;
 }
 
-.icon.iconPremium [id="Oval-Outer"] {
+.icon.iconPremium [id='Oval-Outer'] {
   fill: white;
 }
 
-.icon.iconPremium [id="Oval-Inner"] {
+.icon.iconPremium [id='Oval-Inner'] {
   stroke: white;
 }
 
@@ -217,10 +215,9 @@
 .rocket {
   position: absolute;
   left: -30px;
-  scale: 0.7;
+  transform: scale(0.7);
 }
 
 .hotSale {
-  scale: 0.8;
+  transform: scale(0.8);
 }
-
