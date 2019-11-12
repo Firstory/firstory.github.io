@@ -47,7 +47,8 @@ function Pricing() {
         <div className={styles.planBlock}>
           <div className={styles.planName}>基本方案</div>
           <div className={styles.planPrice}>免費</div>
-          <div
+          <button
+            type="button"
             className={styles.planButton}
             onClick={() => {
               mixpanel.track('Interest in Payment', { plan: 'FREE' });
@@ -55,7 +56,7 @@ function Pricing() {
             }}
           >
             開始使用
-          </div>
+          </button>
           <div className={styles.planMonthly}>
             每個月 <div className={styles.planLimit}>1 小時</div>上傳時間
           </div>
@@ -94,7 +95,8 @@ function Pricing() {
           <div className={styles.planPriceDescription}>
             年繳{'\n'}或者月繳 NT$299 / 月
           </div>
-          <div
+          <button
+            type="button"
             className={styles.planButtonStroke}
             onClick={() => {
               mixpanel.track('Interest in Payment', { plan: 'PREMIUM' });
@@ -102,7 +104,7 @@ function Pricing() {
             }}
           >
             開始使用
-          </div>
+          </button>
           <div className={cx(styles.planMonthly, styles.planTextPremium)}>
             每個月{' '}
             <div className={cx(styles.planLimit, styles.planTextPremium)}>
@@ -151,7 +153,8 @@ function Pricing() {
         <div className={styles.planBlock}>
           <div className={styles.planName}>企業方案</div>
           <div className={styles.planPrice}>請聯絡我們</div>
-          <div
+          <button
+            type="button"
             className={styles.planButton}
             onClick={() => {
               mixpanel.track('Interest in Payment', { plan: 'ENTERPRISE' });
@@ -159,7 +162,7 @@ function Pricing() {
             }}
           >
             聯絡我們
-          </div>
+          </button>
           <div className={styles.planMonthly}>
             每個月 <div className={styles.planLimit}>無限制</div>上傳時間
           </div>
