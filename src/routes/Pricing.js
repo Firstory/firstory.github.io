@@ -45,7 +45,7 @@ function Pricing() {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>
-        升級成為 Firstory Infinity 讓您的節目飛上太空！{' '}
+        升級成為 Firstory Infinity 讓您的節目飛上太空！
       </h2>
       <div className={styles.planTitle}>資費方案</div>
       <div className={styles.planSubTitle}>
