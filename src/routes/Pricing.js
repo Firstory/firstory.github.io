@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import mixpanel from 'mixpanel-browser';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import styles from '../styles/Pricing.module.css';
 import { i18n } from '../i18n';
 import { ReactComponent as ComingSoon } from '../assets/comingsoon.svg';
@@ -30,10 +31,17 @@ const featureList = {
   multiShow: enterprise | developing,
 };
 
+const plans = {
+  FREE: 1,
+  PREMIUM: 2,
+  ENTERPRISE: 3,
+};
+
 mixpanel.init('1fa276e4e72e21867df7c429e861eecf');
 window.mixpanel = mixpanel;
 
 function Pricing() {
+  const [plan, setPlan] = React.useState(plans.PREMIUM);
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>
@@ -43,8 +51,38 @@ function Pricing() {
       <div className={styles.planSubTitle}>
         免費體驗不需要信用卡，付費方案可以隨時取消。
       </div>
+      <div className={styles.buttonRow}>
+        <button
+          className={cx(styles.tabButton, styles.tabButtonLeft, {
+            [styles.tabActive]: plan === plans.FREE,
+          })}
+          onClick={() => setPlan(plans.FREE)}
+        >
+          基本方案
+        </button>
+        <button
+          className={cx(styles.tabButton, styles.tabButtonMid, {
+            [styles.tabActive]: plan === plans.PREMIUM,
+          })}
+          onClick={() => setPlan(plans.PREMIUM)}
+        >
+          標準方案
+        </button>
+        <button
+          className={cx(styles.tabButton, styles.tabButtonRight, {
+            [styles.tabActive]: plan === plans.ENTERPRISE,
+          })}
+          onClick={() => setPlan(plans.ENTERPRISE)}
+        >
+          企業方案
+        </button>
+      </div>
       <div className={styles.planSection}>
-        <div className={styles.planBlock}>
+        <div
+          className={cx(styles.planBlock, {
+            [styles.planBlockNotActive]: !(plan === plans.FREE),
+          })}
+        >
           <div className={styles.planName}>基本方案</div>
           <div className={styles.planPrice}>免費</div>
           <button
@@ -81,7 +119,11 @@ function Pricing() {
             );
           })}
         </div>
-        <div className={cx(styles.planBlock, styles.planBlockPremium)}>
+        <div
+          className={cx(styles.planBlock, styles.planBlockPremium, {
+            [styles.planBlockNotActive]: !(plan === plans.PREMIUM),
+          })}
+        >
           <div className={styles.absoluteRow}>
             <Rocket alt="Rocket" className={styles.rocket} />
             <HotSale alt="Hot sale" className={styles.hotSale} />
@@ -150,7 +192,11 @@ function Pricing() {
             );
           })}
         </div>
-        <div className={styles.planBlock}>
+        <div
+          className={cx(styles.planBlock, {
+            [styles.planBlockNotActive]: !(plan === plans.ENTERPRISE),
+          })}
+        >
           <div className={styles.planName}>企業方案</div>
           <div className={styles.planPrice}>請聯絡我們</div>
           <button
