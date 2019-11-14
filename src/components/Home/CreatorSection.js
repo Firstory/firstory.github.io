@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../styles/CreatorSection.module.css';
-import creators from '../creators.json';
+import styles from './CreatorSection.module.css';
+import creators from './creators.json';
 
 function CreatorSection() {
   return (

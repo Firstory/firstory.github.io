@@ -4,6 +4,7 @@ import SEO from '../components/Seo';
 import MainSection from '../components/Home/MainSection';
 import FeatureSection from '../components/Home/FeatureSection';
 import Pricing from '../components/Pricing';
+import CreatorSection from '../components/Home/CreatorSection';
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
       <MainSection />
       <FeatureSection />
       <Pricing />
+      <CreatorSection />
     </Layout>
   );
 }
