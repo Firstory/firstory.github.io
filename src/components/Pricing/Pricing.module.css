@@ -46,34 +46,30 @@
 
 .planButton {
   letter-spacing: 1.91px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+.planButtonNormal {
   padding-top: 19px;
   padding-bottom: 19px;
   width: 80%;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
-  border-radius: 10px;
   background: linear-gradient(to right, rgb(134, 84, 249), rgb(44, 123, 231));
-  margin-bottom: 32px;
-  cursor: pointer;
+  border: none;
 }
 
 .planButtonStroke {
-  letter-spacing: 1.91px;
   padding-top: 17px;
   padding-bottom: 17px;
   width: 63.49%;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  color: white;
-  border-radius: 10px;
   border-width: 2px;
   border-color: white;
   border-style: solid;
-  margin-bottom: 32px;
-  cursor: pointer;
   background-color: transparent;
 }
 
@@ -235,7 +231,6 @@
   display: none;
 }
 
-
 @media (max-width: 800px) {
   .buttonRow {
     display: flex;
@@ -287,7 +282,7 @@
   .container {
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 50px
+    padding-top: 50px;
   }
 
   .tabButton {
@@ -298,11 +293,8 @@
   .rocket {
     transform: scale(0.5);
   }
-  
+
   .hotSale {
     transform: scale(0.5);
   }
 }
-
-
-

@@ -62,9 +62,12 @@ function PlanColumn({ plan, active, onPaymentClick }) {
       )}
       <button
         type="button"
-        className={
-          plan === plans.PREMIUM ? styles.planButtonStroke : styles.planButton
-        }
+        className={cx(
+          styles.planButton,
+          plan === plans.PREMIUM
+            ? styles.planButtonStroke
+            : styles.planButtonNormal,
+        )}
         onClick={handlePaymentClick}
       >
         聯絡我們
