@@ -136,9 +136,11 @@
   align-items: center;
   padding-top: 15px;
   padding-bottom: 15px;
-  padding-left: 10%;
-  padding-right: 10%;
-  width: 100%;
+  width: 85%;
+}
+
+.planRowPremium {
+  width: 67.46%;
 }
 
 .planText {
