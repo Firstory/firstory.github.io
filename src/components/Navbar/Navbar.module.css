@@ -23,6 +23,14 @@
   margin: auto;
 }
 
+.titleLink {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  color: black;
+}
+
 .logo {
   width: 48px;
   height: 48px;
@@ -30,7 +38,6 @@
 }
 
 .title {
-  flex: 1;
   font-size: 1.2em;
   font-weight: 700;
   padding-left: 10px;
@@ -116,5 +123,6 @@
   .menuItem a {
     text-decoration: none;
     color: #414141;
+    box-shadow: none;
   }
 }

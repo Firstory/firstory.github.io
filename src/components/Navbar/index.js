@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import cx from 'classnames';
 import styles from './Navbar.module.css';
 import Logo from '../../assets/logo.svg';
@@ -11,13 +12,15 @@ function Navbar() {
     <header className={styles.header}>
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <img src={Logo} className={styles.logo} alt="Logo" />
-          <div className={styles.title}>Firstory</div>
+          <Link to="/" className={styles.titleLink}>
+            <img src={Logo} className={styles.logo} alt="Logo" />
+            <div className={styles.title}>Firstory</div>
+          </Link>
           <nav className={cx(styles.navItem, styles.button)}>
             <a href="https://open.firstory.me/browse">開始製作</a>
           </nav>
           <nav className={styles.navItem}>
-            <a to="/pricing">資費方案</a>
+            <Link to="/pricing">資費方案</Link>
           </nav>
           <nav className={styles.navItem}>
             <a href="https://www.instagram.com/firstory_lab/">Instagram</a>
@@ -37,6 +40,9 @@ function Navbar() {
         <div className={styles.menuClose} onClick={() => setOpen(false)}>
           ×
         </div>
+        <nav className={styles.menuItem}>
+          <Link to="/pricing">資費方案</Link>
+        </nav>
         <nav className={styles.menuItem}>
           <a href="https://www.instagram.com/firstory_lab/">Instagram</a>
         </nav>
