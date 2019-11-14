@@ -1,0 +1,31 @@
+.container {
+  padding-top: 5em;
+  padding-bottom: 2em;
+}
+
+.title {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.socialIcon {
+  box-shadow: none;
+}
+
+.socialIcon img {
+  width: 50px;
+  height: 50px;
+  margin: 1em;
+}
+
+.copyright {
+  display: block;
+  text-align: center;
+}
