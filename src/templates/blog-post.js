@@ -4,13 +4,13 @@ import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import { rhythm, scale } from '../utils/typography';
 
-function BlogPostTemplate({ data }) {
+function BlogPostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
-  const { previous, next } = this.props.pageContext;
+  const { previous, next } = pageContext;
 
   return (
-    <Layout location={this.props.location} title={siteTitle}>
+    <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}

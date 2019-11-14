@@ -3,23 +3,10 @@ import cx from 'classnames';
 import mixpanel from 'mixpanel-browser';
 import PlanColumn from './PlanColumn';
 import ComingSoon from './ComingSoon';
-import Available from './Available';
-import NotAvailable from './NotAvailable';
-import HotSale from './HotSale';
-import Rocket from './Rocket';
-import {
-  free,
-  premium,
-  enterprise,
-  developing,
-  featureList,
-  plans,
-} from './constants';
-import { i18n } from '../../i18n';
+import { plans } from './constants';
 import styles from './Pricing.module.css';
 
 mixpanel.init('1fa276e4e72e21867df7c429e861eecf');
-window.mixpanel = mixpanel;
 
 function Pricing() {
   const [plan, setPlan] = React.useState(plans.PREMIUM);
