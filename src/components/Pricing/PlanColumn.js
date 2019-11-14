@@ -110,7 +110,12 @@ function PlanColumn({ plan, active, onPaymentClick }) {
           Icon = NotAvailable;
         }
         return (
-          <div key={f} className={cx(styles.planTextRow, className)}>
+          <div
+            key={f}
+            className={cx(styles.planTextRow, className, {
+              [styles.planRowPremium]: plan === plans.PREMIUM,
+            })}
+          >
             <Icon
               alt={alt}
               className={cx(styles.icon, className, {
