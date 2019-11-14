@@ -16,6 +16,7 @@ function Navbar() {
             <img src={Logo} className={styles.logo} alt="Logo" />
             <div className={styles.title}>Firstory</div>
           </Link>
+          <div className={styles.padding} />
           <nav className={cx(styles.navItem, styles.button)}>
             <a href="https://open.firstory.me/browse">開始製作</a>
           </nav>
