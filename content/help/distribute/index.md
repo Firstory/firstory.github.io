@@ -33,6 +33,10 @@ description: This is a custom description for SEO and Open Graph purposes, rathe
 3. 點選**同意並前往設節目資料**
 4. 設定完成後點選**發佈**
 
+### 等待審核
+
+各個平台審核時間並不一致，Spotify、Google Podcasts 平均審核時間大約為 1 個工作天，Apple Podcast 則為 3 ~ 5 個工作天，一但審核成功，我們會以 App 通知您，也請使用者開啟 App 通知。
+
 ## 發佈成功後
 
 當你成功發佈到其他平台之後，以後只要在 Firstory 發文，其他平台會自動更新。
