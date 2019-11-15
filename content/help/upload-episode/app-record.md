@@ -1,0 +1,39 @@
+---
+title: 錄製單集
+date: "2019-11-12T22:40:32.169Z"
+description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+---
+
+## 使用 Firstory App 來錄製您的節目：
+
+**手機版：**
+
+使用 Firstory 即可在您沒有錄音工具或是錄音軟體時，也可以完成品質穩定的內容，使用 Firstory 錄音前，我們推薦您檢查以下事項：
+
+- 安靜的空間或環境
+- 為手機接上耳麥會有很好的收音品質
+
+#### 監聽功能
+
+Firstory App 提供即時監聽聲音的功能，在錄音時接上耳機，即可像專業的錄音室一樣，隨時檢查自己的聲音。
+
+#### 段落錄音
+
+在 Firstory 錄音，您不需要一次完成整個節目，您可以隨時在錄製到一個段落後，中斷您的錄音，繼續錄音亦或是刪除段落。
+
+#### 加入背景音樂
+
+Firstory 提供數十個免費音源的背景音樂以供使用，您可以客製化調整音樂的音量大小，如果有喜歡的免費音源想要使用，也歡迎[聯絡我們](mailto:firstory.inc@gmail.com)。
+
+#### 草稿功能
+
+在錄音完成後，您可以選擇將單集發佈，或是暫存成為草稿，即使您選擇了發佈，Firstory 也會將您的錄音存成草稿，以便日後的修改或是編輯。
+
+#### 錄音限制
+
+目前 App 錄音有單集 60 分鐘的限制。
+
+
+**網頁版：**
+
+即將推出，敬請期待！
