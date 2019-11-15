@@ -13,7 +13,6 @@ function CreatorSection() {
             className={styles.item}
             href={`https://open.firstory.me/user/${c.id}`}
           >
-            <h4 className={styles.shortDescription}>{c.shortDescription}</h4>
             <img className={styles.image} src={c.avatar} alt={c.name} />
             <h3 className={styles.name}>{c.name}</h3>
           </a>

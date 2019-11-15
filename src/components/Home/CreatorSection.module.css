@@ -1,9 +1,7 @@
 .container {
   max-width: 1170px;
   margin: auto;
-  padding-left: 48px;
-  padding-right: 48px;
-  padding-bottom: 48px;
+  padding: 48px;
 }
 
 .title {
@@ -27,17 +25,10 @@
   box-shadow: none;
 }
 
-.shortDescription {
-  margin: 0;
-  margin-bottom: 1em;
-  font-size: 1.2em;
-  font-weight: 600;
-  height: 2em;
-}
-
 .image {
   height: 150px;
   width: 150px;
+  margin-bottom: 0;
 }
 
 .name {
