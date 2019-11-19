@@ -1,21 +1,46 @@
-import React from 'react';
-import Illustration from '../../assets/illustration.svg';
+import React, { Fragment } from 'react';
+import cx from 'classnames';
 import styles from './FeatureSection.module.css';
+import HoldingPhoneSvg from './HoldingPhoneSvg';
 
-function FeatureSection() {
+function FeatureSection(props) {
+  const {
+    Image,
+    featureTitle,
+    featureList = [],
+    reverse,
+    title,
+    featureSubTitle,
+    featureSubList,
+  } = props;
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>
-        最簡單的 Podcast 的製作工具，讓世界聽到你的聲音。
-      </h2>
-      <div className={styles.row}>
-        <div className={styles.left}>
-          <img className={styles.image} src={Illustration} alt="record" />
+      {title && <h2 className={styles.title}>{title}</h2>}
+      <div className={cx(styles.row, { [styles.reverse]: reverse })}>
+        <div className={cx(styles.left, { [styles.reverse]: reverse })}>
+          <Image />
         </div>
-        <ul className={styles.right}>
-          <li className={styles.item}>用手機輕鬆製作你的 Podcast</li>
-          <li className={styles.item}>一鍵發布至 Spotify, Apple Podcast</li>
-          <li className={styles.item}>一覽無遺聽眾的收聽數據</li>
+        <ul className={cx(styles.right, { [styles.reverse]: reverse })}>
+          <h2 className={styles.featureTitle}>{featureTitle}</h2>
+          <div className={styles.list}>
+            {featureList.map((item, index) => (
+              <li key={index} className={styles.item}>
+                {item}
+              </li>
+            ))}
+          </div>
+          {featureSubTitle && (
+            <Fragment>
+              <h2 className={styles.featureSubTitle}>{featureSubTitle}</h2>
+              <div className={styles.list}>
+                {featureSubList.map((item, index) => (
+                  <li key={index} className={styles.item}>
+                    {item}
+                  </li>
+                ))}
+              </div>
+            </Fragment>
+          )}
         </ul>
       </div>
     </section>
