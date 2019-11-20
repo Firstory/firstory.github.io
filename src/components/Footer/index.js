@@ -6,20 +6,50 @@ import IG from '../../assets/ig.svg';
 function Footer() {
   return (
     <footer className={styles.container}>
-      <div className={styles.title}>Make sure to follow us!</div>
       <div className={styles.row}>
-        <a
-          className={styles.socialIcon}
-          href="https://www.facebook.com/firstory.inc/"
-        >
-          <img src={FB} alt="FB" />
-        </a>
-        <a
-          className={styles.socialIcon}
-          href="https://www.instagram.com/firstory_lab/"
-        >
-          <img src={IG} alt="IG" />
-        </a>
+        <ul className={styles.list}>
+          <h3>Firstory</h3>
+          <li>
+            <a className={styles.link} href="/">
+              功能特色
+            </a>
+          </li>
+          <li>
+            <a className={styles.link} href="/">
+              資費方案
+            </a>
+          </li>
+          <li>
+            <a className={styles.link} href="/">
+              註冊
+            </a>
+          </li>
+          <li>
+            <a className={styles.link} href="/">
+              登入
+            </a>
+          </li>
+        </ul>
+        <ul className={styles.list}>
+          <h3>社群</h3>
+
+          <li>
+            <a
+              className={styles.link}
+              href="https://www.facebook.com/firstory.inc/"
+            >
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a
+              className={styles.link}
+              href="https://www.instagram.com/firstory_lab/"
+            >
+              Instagram
+            </a>
+          </li>
+        </ul>
       </div>
       <small className={styles.copyright}>
         © Firstory {new Date().getFullYear()}. All Rights Reserved.

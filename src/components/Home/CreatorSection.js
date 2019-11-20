@@ -5,7 +5,7 @@ import creators from './creators.json';
 function CreatorSection() {
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>來自 Firstory 的創作者</h2>
+      <h2 className={styles.title}>合作夥伴</h2>
       <div className={styles.row}>
         {creators.map(c => (
           <a
@@ -18,9 +18,6 @@ function CreatorSection() {
           </a>
         ))}
       </div>
-      <a className={styles.button} href="https://open.firstory.me/browse">
-        開始你的第一個 Podcast
-      </a>
     </section>
   );
 }
