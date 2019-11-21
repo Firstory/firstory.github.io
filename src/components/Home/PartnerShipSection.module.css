@@ -1,0 +1,36 @@
+.container {
+  max-width: 1170px;
+  margin: auto;
+  padding: 0 48px 48px 48px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.image {
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  margin-bottom: 0;
+  border-radius: 50%;
+  object-fit: contain;
+  margin: 0 20px;
+}
+
+@media (max-width: 900px) {
+  .image {
+    height: 100px;
+    width: 100px;
+    
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

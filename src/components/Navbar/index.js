@@ -4,6 +4,7 @@ import cx from 'classnames';
 import styles from './Navbar.module.css';
 import Logo from '../../assets/logo.svg';
 import Menu from '../../assets/menu.svg';
+import WebLogoSvg from './WebLogoSvg';
 
 function Navbar() {
   const [open, setOpen] = React.useState(false);
@@ -13,21 +14,19 @@ function Navbar() {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <Link to="/" className={styles.titleLink}>
-            <img src={Logo} className={styles.logo} alt="Logo" />
+            <WebLogoSvg className={styles.logo}/>
             <div className={styles.title}>Firstory</div>
           </Link>
           <div className={styles.padding} />
-          <nav className={cx(styles.navItem, styles.button)}>
-            <a href="https://open.firstory.me/browse">開始製作</a>
-          </nav>
+
           <nav className={styles.navItem}>
             <Link to="/pricing">資費方案</Link>
           </nav>
           <nav className={styles.navItem}>
-            <a href="https://www.instagram.com/firstory_lab/">Instagram</a>
+            <a href="https://open.firstory.me/login">登入</a>
           </nav>
           <nav className={styles.navItem}>
-            <a href="https://www.facebook.com/firstory.inc/">Facebook</a>
+            <a href="https://open.firstory.me/signup">免費註冊</a>
           </nav>
           <img
             className={styles.menuIcon}

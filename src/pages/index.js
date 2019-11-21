@@ -9,6 +9,7 @@ import HoldingPhoneSvg from '../components/Home/HoldingPhoneSvg';
 import HeadphoneSvg from '../components/Home/HeadphoneSvg';
 import DonateAndSubscriptionSvg from '../components/Home/DonateAndSubscriptionSvg';
 import CallToActionSection from '../components/Home/CallToActionSection';
+import PartnerShipSection from '../components/Home/PartnerShipSection';
 import ApplePodcastSvg from '../components/Home/ApplePodcastSvg';
 import SpotifySvg from '../components/Home/SpotifySvg';
 import GooglePodcastSvg from '../components/Home/GooglePodcastSvg';
@@ -52,6 +53,7 @@ function Home() {
       />
       <CallToActionSection />
       <CreatorSection />
+      <PartnerShipSection />
     </Layout>
   );
 }
