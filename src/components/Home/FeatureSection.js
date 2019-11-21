@@ -18,7 +18,7 @@ function FeatureSection(props) {
       {title && <h2 className={styles.title}>{title}</h2>}
       <div className={cx(styles.row, { [styles.reverse]: reverse })}>
         <div className={cx(styles.left, { [styles.reverse]: reverse })}>
-          <Image />
+          <Image className={styles.image} />
         </div>
         <ul className={cx(styles.right, { [styles.reverse]: reverse })}>
           <h2 className={styles.featureTitle}>{featureTitle}</h2>

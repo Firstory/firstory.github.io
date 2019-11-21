@@ -68,3 +68,9 @@
   width: 25%;
   height: 50%;
 }
+
+@media(max-width: 400px) {
+  .man {
+    display: none;
+  }
+}
