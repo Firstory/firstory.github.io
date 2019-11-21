@@ -1,8 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
-import Pic1 from '../../assets/pic1.png';
-import Pic2 from '../../assets/pic2.png';
+import LapTopPhoneSvg from './LapTopPhoneSvg';
+import GooglePic from '../../assets/Home/google-play-badge.png';
 import styles from './MainSection.module.css';
+import AppleStoreSvg from '../../assets/Home/Download_on_the_App_Store_Badge_CNTC_RGB_blk_100217.svg';
 
 function MainSection() {
   return (
@@ -12,26 +13,22 @@ function MainSection() {
           最簡單的
           <br /> Podcast 製作工具
         </h1>
+        <a className={styles.button}>開始自己的 Podcast！</a>
         <div className={styles.buttonRow}>
-          <a
-            className={cx(styles.button, styles.ios)}
-            href="https://apps.apple.com/app/id1351170844"
-          >
-            iOS
+          <a href="https://apps.apple.com/app/id1351170844">
+            <img
+              src={AppleStoreSvg}
+              className={styles.image}
+              alt="Apple Store"
+            />
           </a>
-          <a
-            className={cx(styles.button, styles.android)}
-            href="https://play.google.com/store/apps/details?id=com.firstory"
-          >
-            Android
+          <a href="https://play.google.com/store/apps/details?id=com.firstory">
+            <img src={GooglePic} alt="Google Play" className={styles.image} />
           </a>
         </div>
       </div>
       <div className={styles.imageContainer}>
-        <img className={styles.image} src={Pic1} alt="pic1" />
-      </div>
-      <div className={styles.imageContainer}>
-        <img className={styles.image} src={Pic2} alt="pic2" />
+        <LapTopPhoneSvg />
       </div>
     </section>
   );

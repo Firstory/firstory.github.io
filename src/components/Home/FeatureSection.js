@@ -14,7 +14,7 @@ function FeatureSection(props) {
     featureSubList,
   } = props;
   return (
-    <section className={styles.container}>
+    <section id="feature" className={styles.container}>
       {title && <h2 className={styles.title}>{title}</h2>}
       <div className={cx(styles.row, { [styles.reverse]: reverse })}>
         <div className={cx(styles.left, { [styles.reverse]: reverse })}>

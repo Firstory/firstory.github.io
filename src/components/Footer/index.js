@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styles from './Footer.module.css';
 import FB from '../../assets/fb.svg';
 import IG from '../../assets/ig.svg';
@@ -10,22 +11,22 @@ function Footer() {
         <ul className={styles.list}>
           <h3>Firstory</h3>
           <li>
-            <a className={styles.link} href="/">
+            <a className={styles.link} href="#feature">
               功能特色
             </a>
           </li>
           <li>
-            <a className={styles.link} href="/">
+            <Link className={styles.link} to="/pricing">
               資費方案
-            </a>
+            </Link>
           </li>
           <li>
-            <a className={styles.link} href="/">
+            <a className={styles.link} href="https://open.firstory.me/signup">
               註冊
             </a>
           </li>
           <li>
-            <a className={styles.link} href="/">
+            <a className={styles.link} href="https://open.firstory.me/login">
               登入
             </a>
           </li>
