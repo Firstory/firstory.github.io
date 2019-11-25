@@ -24,6 +24,10 @@
   color: #fff;
 }
 
+.link:hover {
+  color: #fb355e;
+}
+
 
 .copyright {
   display: block;

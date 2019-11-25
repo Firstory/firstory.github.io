@@ -77,7 +77,8 @@
 }
 
 .navItem a[href="https://open.firstory.me/signup"]:hover {
-  border-color: #f75786;
+  border-color: #ff456b;
+  color: #ff456b;
 }
 
 .navItem:hover a {
