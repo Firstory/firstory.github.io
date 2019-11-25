@@ -32,8 +32,8 @@
 }
 
 .logo {
-  width: 48px;
-  height: 48px;
+  width: 30px;
+  height: 30px;
   margin: 0;
 }
 
@@ -41,6 +41,7 @@
   font-size: 1.2em;
   font-weight: 700;
   padding-left: 10px;
+  color: #fb355e;
 }
 
 .padding {
@@ -52,16 +53,31 @@
 }
 
 .navItem a {
-  display: block;
+  /* display: block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #4d4d44;
   text-decoration: none;
   font-weight: 600;
-  padding: 0 1em;
+  padding: 0.4em 1em;
   height: 2.4em;
-  line-height: 2.4em;
+  /* line-height: 2.4em; */
   border-radius: 5px;
   cursor: pointer;
   box-shadow: none;
+}
+
+.navItem a[href="https://open.firstory.me/signup"] {
+  color: #fb355e;
+  border-radius: 1.2em;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #fb355e;
+}
+
+.navItem a[href="https://open.firstory.me/signup"]:hover {
+  border-color: #f75786;
 }
 
 .navItem:hover a {
@@ -91,6 +107,7 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
+    margin-bottom: 0;
   }
 
   .menu {

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="35px" viewBox="0 0 42 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>icon/arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="webui_1" transform="translate(-959.000000, -3646.000000)">
+            <g id="icon/arrow" transform="translate(945.000000, 3628.000000)">
+                <g id="Group-9">
+                    <rect id="Rectangle" x="0" y="0" width="70" height="70"></rect>
+                    <g id="Group-20-Copy" transform="translate(14.000000, 18.000000)" fill="#FB355E">
+                        <path d="M26.3045002,1.80597324 L26.437132,1.93225621 L42,17.4951242 L26.437132,33.0579923 C25.0046095,34.4905147 22.6820317,34.4905147 21.2495093,33.0579923 C19.8603966,31.6688796 19.8183023,29.442837 21.1232263,28.0030013 L21.2495093,27.8703696 L27.956,21.1628644 L3.66820317,21.1633274 C1.6423105,21.1633274 2.48100298e-16,19.5210169 0,17.4951242 C-2.48100298e-16,15.4692316 1.6423105,13.8269211 3.66820317,13.8269211 L27.956,13.8268644 L21.2495093,7.11987889 C19.8603966,5.73076621 19.8183023,3.50472363 21.1232263,2.06488793 L21.2495093,1.93225621 C22.638622,0.543143536 24.8646645,0.501049212 26.3045002,1.80597324 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
