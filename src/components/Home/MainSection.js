@@ -13,7 +13,9 @@ function MainSection() {
           最簡單的
           <br /> Podcast 製作工具
         </h1>
-        <a className={styles.button}>開始自己的 Podcast！</a>
+        <a className={styles.button} href="https://open.firstory.me/">
+          開始自己的 Podcast！
+        </a>
         <div className={styles.buttonRow}>
           <a href="https://apps.apple.com/app/id1351170844">
             <img

@@ -12,11 +12,11 @@ function CallToActionSection() {
       <div className={styles.container}>
         <h2 className={styles.title}>打造個人品牌從 Firstory 開始</h2>
         <a className={styles.button}>免費註冊</a>
-        <p className={styles.text}>已經有 Podcast 了嗎 ？</p>
+        {/* <p className={styles.text}>已經有 Podcast 了嗎 ？</p>
         <a className={styles.arrowLink}>
           搬家到 Firstory
           <ArrowSvg className={styles.arrow} />
-        </a>
+        </a> */}
         <ManSvg className={styles.man}/>
       </div>
     </section>
