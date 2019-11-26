@@ -19,6 +19,11 @@ function Footer() {
             </Link>
           </li>
           <li>
+            <Link className={styles.link} to="/help">
+              幫助中心
+            </Link>
+          </li>
+          <li>
             <a className={styles.link} href="https://open.firstory.me/signup">
               註冊
             </a>

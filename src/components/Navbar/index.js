@@ -18,7 +18,9 @@ function Navbar() {
             <div className={styles.title}>Firstory</div>
           </Link>
           <div className={styles.padding} />
-
+          <nav className={styles.navItem}>
+            <Link to="/help">幫助中心</Link>
+          </nav>
           <nav className={styles.navItem}>
             <Link to="/pricing">資費方案</Link>
           </nav>
