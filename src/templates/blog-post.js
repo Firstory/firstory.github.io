@@ -22,12 +22,12 @@ function BlogPostTemplate({ data, pageContext, location }) {
             <h1
               style={{
                 marginTop: rhythm(1),
-                marginBottom: 0,
+                marginBottom: '24px',
               }}
             >
               {post.frontmatter.title}
             </h1>
-            <p
+            {/* <p
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
@@ -35,7 +35,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
               }}
             >
               {post.frontmatter.date}
-            </p>
+            </p> */}
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
           <hr
@@ -54,7 +54,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
               padding: 0,
             }}
           >
-            <li>
+            {/* <li>
               {previous && (
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
@@ -67,7 +67,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
                   {next.frontmatter.title} →
                 </Link>
               )}
-            </li>
+            </li> */}
           </ul>
         </nav>
       </ArticleContainer>

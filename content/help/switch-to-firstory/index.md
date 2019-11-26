@@ -1,6 +1,6 @@
 ---
 title: 搬家到 Firstory
-date: "2019-11-12T22:40:32.169Z"
+date: "2019-11-16T22:40:32.169Z"
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 如果你已經有一個節目想搬家到 Firstory，可以參考以下步驟，**你不用擔心遺失任何以前的收聽以及排名等資料**。

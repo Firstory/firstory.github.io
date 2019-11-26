@@ -1,6 +1,6 @@
 ---
 title: 在哪裡查看數據
-date: "2019-11-12T22:40:32.169Z"
+date: "2019-11-14T22:40:32.169Z"
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 #### 下載 Firstory App 在最右邊個人頁面的 Tab 可以找到**數據**的選項

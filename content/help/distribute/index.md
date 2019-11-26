@@ -1,6 +1,6 @@
 ---
 title: 發佈你的 Podcast
-date: "2019-11-12T22:40:32.169Z"
+date: "2019-11-15T22:40:32.169Z"
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 ### 當你在 Firstory 上傳你的音檔之後，我們可以幫你發佈到以下平台

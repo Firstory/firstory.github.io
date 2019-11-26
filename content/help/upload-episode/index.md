@@ -4,7 +4,7 @@ date: "2019-11-12T22:40:32.169Z"
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
-# 目前 Firstory 提供兩種上傳方式：
+## 目前 Firstory 提供兩種上傳方式：
 
 **手機版：**
 
