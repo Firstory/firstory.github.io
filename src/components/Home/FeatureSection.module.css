@@ -1,7 +1,7 @@
 .container {
   max-width: 1170px;
   margin: auto;
-  padding-left: 60px;
+  padding-left: 48px;
   padding-right: 48px;
   padding-bottom: 3em;
 }
@@ -119,6 +119,11 @@
 }
 
 @media(max-width: 400px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .featureTitle {
     font-size: 1.8em;
   }

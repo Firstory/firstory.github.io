@@ -33,6 +33,10 @@
   margin-bottom: 1.25em;
 }
 
+.button:hover {
+  background-color: #FF6585;
+}
+
 .text {
   font-weight: 600;
   text-align: center;

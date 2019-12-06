@@ -77,7 +77,8 @@
 }
 
 .navItem a[href="https://open.firstory.me/signup"]:hover {
-  border-color: #f75786;
+  background-color: #fb355e;
+  color: white;
 }
 
 .navItem:hover a {
@@ -145,5 +146,12 @@
     text-decoration: none;
     color: #414141;
     box-shadow: none;
+  }
+}
+
+@media(max-width: 500px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

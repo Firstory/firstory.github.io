@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 import SEO from '../components/Seo';
 import MainSection from '../components/Home/MainSection';
 import FeatureSection from '../components/Home/FeatureSection';
-import Pricing from '../components/Pricing';
 import CreatorSection from '../components/Home/CreatorSection';
 import HoldingPhoneSvg from '../components/Home/HoldingPhoneSvg';
 import HeadphoneSvg from '../components/Home/HeadphoneSvg';

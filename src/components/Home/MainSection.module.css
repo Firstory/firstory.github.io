@@ -43,15 +43,20 @@
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: #FF6585;
+}
+
 .imageContainer {
   flex: 1;
 }
 
 .image {
   height: 70px;
+  object-fit: contain;
 }
 
-.image[alt="Apple Store"] {
+.image[alt='Apple Store'] {
   padding-top: 11px;
   padding-bottom: 11px;
 }
@@ -94,8 +99,13 @@
   }
 }
 
-@media(max-width: 400px) {
+@media (max-width: 400px) {
   .button {
     font-size: 0.8em;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: 轉移 RSS
-date: '2019-11-12T22:40:32.169Z'
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+date: '2019-11-13T22:40:32.169Z'
+description: 從 Firstory 轉移至其他家 Host
 ---
 
 ## 從 Firstory 轉移至其他家 Host

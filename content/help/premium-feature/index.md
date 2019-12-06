@@ -1,7 +1,7 @@
 ---
 title: Firstory Infinity 進階功能
-date: '2019-11-12T22:40:32.169Z'
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+date: '2019-11-16T22:40:32.169Z'
+description: 升級 Firstory Infinity 將可以解鎖以下功能
 ---
 
 升級 Firstory Infinity 將可以解鎖以下功能
