@@ -1,7 +1,7 @@
 ---
 title: 帳號轉移與更動
 date: "2019-11-12T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+description: 帳號轉移與更動
 ---
 ## 停用 Firstory 帳號
 

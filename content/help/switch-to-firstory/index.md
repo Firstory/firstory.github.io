@@ -1,13 +1,14 @@
 ---
 title: 搬家到 Firstory
-date: "2019-11-16T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+date: '2019-11-16T22:40:32.169Z'
+description: 如果你已經有一個節目想搬家到 Firstory，可以參考以下步驟，你不用擔心遺失任何以前的收聽以及排名等資料。
 ---
+
 如果你已經有一個節目想搬家到 Firstory，可以參考以下步驟，**你不用擔心遺失任何以前的收聽以及排名等資料**。
 
 ## 提交你的 RSS
 
-首先，進入[提交RSS](https://open.firstory.me/submit-rss)的頁面，提交你的 RSS 並創建一個 Firstory 帳號
+首先，進入[提交 RSS](https://open.firstory.me/submit-rss)的頁面，提交你的 RSS 並創建一個 Firstory 帳號
 
 1. 輸入你的 RSS
 2. 我們會先寄一封驗證信到 RSS 中 author 這個欄位中的 email

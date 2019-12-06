@@ -1,8 +1,9 @@
 ---
 title: 社群分享功能
-date: "2019-11-16T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+date: '2019-11-16T22:40:32.169Z'
+description: 透過 Firstory App 的分享功能，您可以將作品輕鬆分享到各個平台
 ---
+
 透過 Firstory App 的分享功能，您可以將作品輕鬆分享到各個平台：
 
 ### 分享個人單集
@@ -22,4 +23,3 @@ description: This is a custom description for SEO and Open Graph purposes, rathe
 ### 分享至 Medium
 
 Firstory 提供的網址超連結，可以嵌入 Medium，讓使用者直接在閱讀文章的時候，也可以聆聽音檔。
-
