@@ -17,6 +17,7 @@
 .list {
   color: #fff;
   list-style: none;
+  margin-left: 0;
 }
 
 .link {
