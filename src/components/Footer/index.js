@@ -9,7 +9,7 @@ function Footer() {
         <ul className={styles.list}>
           <h3>Firstory</h3>
           <li>
-            <Link className={styles.link} href="/#feature">
+            <Link className={styles.link} to="/#feature">
               功能特色
             </Link>
           </li>

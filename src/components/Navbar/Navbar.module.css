@@ -123,6 +123,7 @@
     flex-direction: column;
     padding: 1em;
     transition: ease 0.5s;
+    padding-top: 80px;
   }
 
   .menu.open {
@@ -130,16 +131,22 @@
   }
 
   .menuClose {
-    font-size: 4em;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    font-size: 2.5em;
     color: #414141;
     cursor: pointer;
-    margin-bottom: 2em;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
   }
 
   .menuItem {
-    font-size: 2em;
+    font-size: 1.2em;
     font-weight: 700;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
   }
 
   .menuItem a {
@@ -149,9 +156,14 @@
   }
 }
 
-@media(max-width: 500px) {
+@media (max-width: 500px) {
   .container {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .menu {
+    width: 100%;
+    right: -100%;
   }
 }
