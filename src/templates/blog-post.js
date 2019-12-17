@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import ArticleContainer from '../components/ArticleContainer';
 import { rhythm } from '../utils/typography';
 
@@ -11,7 +11,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
+      <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import NavigateNextRoundedIcon from '@material-ui/icons/NavigateNextRounded';
 import Layout from '../components/Layout';
-import SEO from '../components/Seo';
+import Seo from '../components/Seo';
 import styles from '../components/Help/Help.module.css';
 import ArticleContainer from '../components/ArticleContainer';
 import { rhythm } from '../utils/typography';
@@ -11,7 +11,7 @@ function Help({ data }) {
   const posts = data.allMarkdownRemark.edges;
   return (
     <Layout>
-      <SEO title="Help" />
+      <Seo title="Help" />
       <ArticleContainer>
         <h1 className={styles.title}>幫助中心</h1>
         <div className={styles.articleRow}>
