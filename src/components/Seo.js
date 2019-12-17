@@ -1,15 +1,8 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
+function Seo({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +11,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            image
           }
         }
       }
@@ -26,6 +20,7 @@ function SEO({ description, lang, meta, title }) {
 
   const metaTitle = title || site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
+  const metaImage = image || site.siteMetadata.image;
 
   return (
     <Helmet
@@ -35,35 +30,43 @@ function SEO({ description, lang, meta, title }) {
       title={metaTitle}
       meta={[
         {
-          name: `description`,
+          name: 'description',
           content: metaDescription,
         },
         {
-          property: `og:title`,
+          name: 'image',
+          content: metaImage,
+        },
+        {
+          property: 'og:title',
           content: metaTitle,
         },
         {
-          property: `og:description`,
+          property: 'og:description',
           content: metaDescription,
         },
         {
-          property: `og:type`,
-          content: `website`,
+          property: 'og:image',
+          content: metaImage,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: 'og:type',
+          content: 'website',
         },
         {
-          name: `twitter:creator`,
+          name: 'twitter:card',
+          content: 'summary',
+        },
+        {
+          name: 'twitter:creator',
           content: site.siteMetadata.author,
         },
         {
-          name: `twitter:title`,
+          name: 'twitter:title',
           content: metaTitle,
         },
         {
-          name: `twitter:description`,
+          name: 'twitter:description',
           content: metaDescription,
         },
       ].concat(meta)}
@@ -71,10 +74,10 @@ function SEO({ description, lang, meta, title }) {
   );
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: 'zh',
   meta: [],
   description: '',
 };
 
-export default SEO;
+export default Seo;

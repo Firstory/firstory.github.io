@@ -5,6 +5,7 @@ module.exports = {
     description:
       '最簡單的 Podcast 製作工具，讓世界聽到你的聲音。大家都在建立聲音品牌了，快點一起加入了吧！',
     siteUrl: 'https://firstory.me',
+    image: '/image/preview.png',
   },
   plugins: [
     {
