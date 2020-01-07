@@ -13,7 +13,7 @@ function Pricing() {
 
   function handlePaymentClick(p) {
     mixpanel.track('Interest in Payment', { plan: p });
-    alert('即將於 12 月推出！敬請期待！');
+    alert('即將於 2 月推出！敬請期待！');
   }
 
   return (
