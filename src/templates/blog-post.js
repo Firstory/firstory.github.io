@@ -29,7 +29,7 @@ function BlogPostTemplate({ data, pageContext, location }) {
                   <Link to={`/help/${section}/`}>{sectionTitle}</Link>
                 </li>
                 <li>
-                  <Link to={`/help/${section}/${slug}/`}>{title}</Link>
+                  <Link to={slug}>{title}</Link>
                 </li>
               </ol>
             ) : null}
