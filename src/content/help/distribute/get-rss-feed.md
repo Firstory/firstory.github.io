@@ -1,6 +1,7 @@
 ---
 title: 取得自己的 RSS feed
-date: '2019-11-12T22:40:32.169Z'
+order: 2
+section: distribute
 description: 如果你想要手動發佈你的 Podcast 到其他平台，你需要先取得自己的 RSS feed
 ---
 

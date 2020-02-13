@@ -1,6 +1,7 @@
 ---
 title: 在哪裡查看數據
-date: '2019-11-14T22:40:32.169Z'
+order: 4
+section: get-started
 description: Firstory 將 Spotify 以及 Apple Podcast 兩家的數據整合，讓使用者可以在一個頁面查看綜合的數據。
 ---
 

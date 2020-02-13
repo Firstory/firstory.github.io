@@ -1,6 +1,7 @@
 ---
 title: 上傳單集
-date: '2019-11-12T22:40:32.169Z'
+order: 1
+section: get-started
 description: 目前 Firstory 提供兩種上傳方式
 ---
 

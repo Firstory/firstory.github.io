@@ -1,6 +1,7 @@
 ---
 title: 社群分享功能
-date: '2019-11-16T22:40:32.169Z'
+order: 3
+section: get-started
 description: 透過 Firstory App 的分享功能，您可以將作品輕鬆分享到各個平台
 ---
 

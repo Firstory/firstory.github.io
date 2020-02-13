@@ -1,6 +1,7 @@
 ---
 title: 發佈你的 Podcast
-date: '2019-11-15T22:40:32.169Z'
+order: 1
+section: distribute
 description: 當你在 Firstory 上傳你的音檔之後，我們可以幫你發佈到各個 Podcast 平台
 ---
 

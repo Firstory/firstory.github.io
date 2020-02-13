@@ -1,6 +1,7 @@
 ---
 title: 錄製單集
-date: '2019-11-12T22:40:32.169Z'
+order: 2
+section: get-started
 description: 使用 Firstory App 即可在您沒有錄音工具或是錄音軟體時，也可以完成品質穩定的內容。
 ---
 

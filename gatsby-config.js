@@ -11,7 +11,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content`,
+        path: `${__dirname}/src/content`,
         name: 'content',
       },
     },
@@ -55,7 +55,7 @@ module.exports = {
         background_color: '#ffffff',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'content/assets/icon.png',
+        icon: 'src/content/assets/icon.png',
       },
     },
     `gatsby-plugin-offline`,
@@ -66,5 +66,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    `gatsby-plugin-postcss`,
   ],
 };

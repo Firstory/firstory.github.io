@@ -1,6 +1,7 @@
 ---
 title: 帳號轉移與更動
-date: "2019-11-12T22:40:32.169Z"
+order: 2
+section: account-and-podcast
 description: 帳號轉移與更動
 ---
 ## 停用 Firstory 帳號

@@ -1,6 +1,7 @@
 ---
 title: 搬家到 Firstory
-date: '2019-11-16T22:40:32.169Z'
+order: 1
+section: switch-host
 description: 如果你已經有一個節目想搬家到 Firstory，可以參考以下步驟，你不用擔心遺失任何以前的收聽以及排名等資料。
 ---
 

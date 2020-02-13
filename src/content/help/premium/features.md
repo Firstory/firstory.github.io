@@ -1,6 +1,7 @@
 ---
 title: Firstory Infinity 進階功能
-date: '2019-11-16T22:40:32.169Z'
+order: 1
+section: premium
 description: 升級 Firstory Infinity 將可以解鎖以下功能
 ---
 

@@ -4,11 +4,12 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`);
+  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`);
+  const sectionTemplate = path.resolve(`./src/templates/section.js`);
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        postsRemark: allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -19,8 +20,14 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                section
               }
             }
+          }
+        }
+        sectionsGroup: allMarkdownRemark(limit: 2000) {
+          group(field: frontmatter___section) {
+            fieldValue
           }
         }
       }
@@ -31,15 +38,25 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges;
+  const posts = result.data.postsRemark.edges;
 
   posts.forEach((post, index) => {
     createPage({
       path: post.node.fields.slug,
-      component: blogPost,
+      component: blogPostTemplate,
       context: {
         slug: post.node.fields.slug,
+      },
+    });
+  });
+
+  const sections = result.data.sectionsGroup.group;
+  sections.forEach(section => {
+    createPage({
+      path: `/help/${section.fieldValue}/`,
+      component: sectionTemplate,
+      context: {
+        section: section.fieldValue,
       },
     });
   });

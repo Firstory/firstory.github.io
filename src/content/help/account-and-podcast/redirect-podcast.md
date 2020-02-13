@@ -1,6 +1,7 @@
 ---
 title: 轉移 RSS
-date: '2019-11-13T22:40:32.169Z'
+order: 1
+section: account-and-podcast
 description: 從 Firstory 轉移至其他家 Host
 ---
 
