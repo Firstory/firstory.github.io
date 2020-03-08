@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import cx from 'classnames';
 import styles from './FeatureSection.module.css';
-import HoldingPhoneSvg from './HoldingPhoneSvg';
 
 function FeatureSection(props) {
   const {

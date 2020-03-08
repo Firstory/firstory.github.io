@@ -9,7 +9,7 @@ description: 如果你想要手動發佈你的 Podcast 到其他平台，你需�
 
 ### 網頁版
 
-1. 前往[發佈狀態](https://open.firstory.me/distribution)的頁面
+1. 前往[發佈狀態](https://studio.firstory.me/distribution)的頁面
 2. 如果你尚未設定過發佈資料，需先完成設定
 3. 如果你已完成設定，可以在此頁面的上方找到你的 RSS feed
 

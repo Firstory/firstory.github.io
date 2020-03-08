@@ -53,7 +53,6 @@
 }
 
 .navItem a {
-  /* display: block; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,13 +61,12 @@
   font-weight: 600;
   padding: 0.4em 1em;
   height: 2.4em;
-  /* line-height: 2.4em; */
   border-radius: 5px;
   cursor: pointer;
   box-shadow: none;
 }
 
-.navItem a[href="https://open.firstory.me/signup"] {
+.navItem.startPodcast a {
   color: #fb355e;
   border-radius: 1.2em;
   border-width: 3px;
@@ -76,7 +74,7 @@
   border-color: #fb355e;
 }
 
-.navItem a[href="https://open.firstory.me/signup"]:hover {
+.navItem.startPodcast a:hover {
   background-color: #fb355e;
   color: white;
 }

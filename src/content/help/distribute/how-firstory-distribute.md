@@ -24,7 +24,7 @@ description: 當你在 Firstory 上傳你的音檔之後，我們可以幫你發
 
 ### 網頁版
 
-1. 前往[發佈狀態](https://open.firstory.me/distribution)的頁面
+1. 前往[發佈狀態](https://studio.firstory.me/distribution)的頁面
 2. 點選**同意並前往設節目資料**
 3. 設定完成後點選**發佈**
 

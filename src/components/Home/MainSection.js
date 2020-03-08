@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 import LapTopPhoneSvg from './LapTopPhoneSvg';
 import GooglePic from '../../assets/Home/google-play-badge.png';
 import styles from './MainSection.module.css';
@@ -13,7 +12,7 @@ function MainSection() {
           最簡單的
           <br /> Podcast 製作工具
         </h1>
-        <a className={styles.button} href="https://open.firstory.me/">
+        <a className={styles.button} href="https://studio.firstory.me">
           開始自己的 Podcast！
         </a>
         <div className={styles.buttonRow}>

@@ -29,13 +29,13 @@ function Footer() {
             </Link>
           </li>
           <li>
-            <a className={styles.link} href="https://open.firstory.me/signup">
-              註冊
+            <a className={styles.link} href="https://open.firstory.me">
+              瀏覽節目
             </a>
           </li>
           <li>
-            <a className={styles.link} href="https://open.firstory.me/login">
-              登入
+            <a className={styles.link} href="https://studio.firstory.me">
+              開始 Podcast
             </a>
           </li>
         </ul>

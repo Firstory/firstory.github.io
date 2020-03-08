@@ -24,10 +24,10 @@ function Navbar() {
             <Link to="/pricing">資費方案</Link>
           </nav>
           <nav className={styles.navItem}>
-            <a href="https://open.firstory.me/login">登入</a>
+            <a href="https://open.firstory.me">瀏覽節目</a>
           </nav>
-          <nav className={styles.navItem}>
-            <a href="https://open.firstory.me/signup">免費註冊</a>
+          <nav className={cx(styles.navItem, styles.startPodcast)}>
+            <a href="https://studio.firstory.me">開始 Podcast</a>
           </nav>
           <img
             className={styles.menuIcon}
@@ -48,10 +48,10 @@ function Navbar() {
           <Link to="/pricing">資費方案</Link>
         </nav>
         <nav className={styles.menuItem}>
-          <a href="https://open.firstory.me/login">登入</a>
+          <a href="https://open.firstory.me">瀏覽節目</a>
         </nav>
-        <nav className={styles.menuItem}>
-          <a href="https://open.firstory.me/signup">免費註冊</a>
+        <nav className={cx(styles.menuItem, styles.startPodcast)}>
+          <a href="https://studio.firstory.me">開始 Podcast</a>
         </nav>
       </div>
     </header>

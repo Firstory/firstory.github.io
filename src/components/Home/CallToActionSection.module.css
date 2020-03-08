@@ -19,7 +19,6 @@
 }
 
 .button {
-  /* width: 100px; */
   padding-left: 2.5em;
   padding-right: 2.5em;
   padding-top: 0.8em;
@@ -34,6 +33,7 @@
 }
 
 .button:hover {
+  text-decoration: none;
   background-color: #FF6585;
 }
 
@@ -59,6 +59,10 @@
   position: relative;
   left: 5px;
   transition: left 0.1s;
+}
+
+.arrowLink:hover {
+  text-decoration: none;
 }
 
 .arrowLink:hover .arrow {

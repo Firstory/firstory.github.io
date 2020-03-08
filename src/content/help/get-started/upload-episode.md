@@ -13,4 +13,4 @@ description: 目前 Firstory 提供兩種上傳方式
 
 **網頁版：**
 
-至我們 [Firstory 上傳頁面](https://open.firstory.me/upload)，即可上傳，目前網頁版有單次上傳最大 250 MB 的限制。
+至我們 [Firstory 上傳頁面](https://studio.firstory.me/upload)，即可上傳，目前網頁版有單次上傳最大 250 MB 的限制。
