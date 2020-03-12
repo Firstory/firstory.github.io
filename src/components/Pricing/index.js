@@ -11,11 +11,6 @@ mixpanel.init('1fa276e4e72e21867df7c429e861eecf');
 function Pricing() {
   const [plan, setPlan] = React.useState(plans.PREMIUM);
 
-  function handlePaymentClick(p) {
-    mixpanel.track('Interest in Payment', { plan: p });
-    alert('即將於 2 月推出！敬請期待！');
-  }
-
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -53,21 +48,9 @@ function Pricing() {
           </button>
         </div>
         <div className={styles.planSection}>
-          <PlanColumn
-            plan="FREE"
-            active={plan === plans.FREE}
-            onPaymentClick={handlePaymentClick}
-          />
-          <PlanColumn
-            plan="PREMIUM"
-            active={plan === plans.PREMIUM}
-            onPaymentClick={handlePaymentClick}
-          />
-          <PlanColumn
-            plan="ENTERPRISE"
-            active={plan === plans.ENTERPRISE}
-            onPaymentClick={handlePaymentClick}
-          />
+          <PlanColumn plan="FREE" active={plan === plans.FREE} />
+          <PlanColumn plan="PREMIUM" active={plan === plans.PREMIUM} />
+          <PlanColumn plan="ENTERPRISE" active={plan === plans.ENTERPRISE} />
         </div>
         <div className={styles.iconHint}>
           <ComingSoon alt="Coming Soon" className={cx(styles.icon)} />

@@ -22,10 +22,6 @@ const limits = {
 };
 
 function PlanColumn({ plan, active, onPaymentClick }) {
-  const handlePaymentClick = React.useCallback(() => {
-    onPaymentClick(plan);
-  }, [plan, onPaymentClick]);
-
   return (
     <div
       className={cx(styles.planBlock, {
@@ -60,18 +56,25 @@ function PlanColumn({ plan, active, onPaymentClick }) {
           {plan === plans.FREE ? '免費' : '聯絡我們'}
         </div>
       )}
-      <button
-        type="button"
+      <a
+        href={
+          plan === plans.ENTERPRISE
+            ? 'https://m.me/firstory.inc'
+            : 'https://studio.firstory.me'
+        }
         className={cx(
           styles.planButton,
           plan === plans.PREMIUM
             ? styles.planButtonStroke
             : styles.planButtonNormal,
         )}
-        onClick={handlePaymentClick}
       >
-        聯絡我們
-      </button>
+        {plan === plans.FREE
+          ? '馬上開始'
+          : plan === plans.PREMIUM
+          ? '限時終生免費'
+          : '聯絡我們'}
+      </a>
       <div
         className={cx(styles.planMonthly, {
           [styles.planTextPremium]: plan === plans.PREMIUM,

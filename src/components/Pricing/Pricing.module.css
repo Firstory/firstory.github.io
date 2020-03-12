@@ -55,6 +55,10 @@
   margin-bottom: 32px;
 }
 
+.planButton:hover {
+  text-decoration: none;
+}
+
 .planButtonNormal {
   padding-top: 19px;
   padding-bottom: 19px;
