@@ -18,7 +18,7 @@ function Pricing() {
           升級成為 Firstory Infinity 讓您的節目飛上太空！
         </h2>
         <div className={styles.planTitle}>
-          防疫期間在家錄 Pocast 最安全，現在註冊即享有終身免費！
+          防疫期間在家錄 Podcast 最安全，現在註冊即享有終身免費！
         </div>
         <div className={styles.buttonRow}>
           <button
