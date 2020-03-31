@@ -17,9 +17,8 @@ function Pricing() {
         <h2 className={styles.title}>
           升級成為 Firstory Infinity 讓您的節目飛上太空！
         </h2>
-        <div className={styles.planTitle}>資費方案</div>
-        <div className={styles.planSubTitle}>
-          免費體驗不需要信用卡，付費方案可以隨時取消。
+        <div className={styles.planTitle}>
+          防疫期間在家錄 Pocast 最安全，現在註冊即享有終身免費！
         </div>
         <div className={styles.buttonRow}>
           <button

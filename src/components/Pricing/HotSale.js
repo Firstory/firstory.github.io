@@ -26,17 +26,24 @@ function HotSale(props) {
         </filter>
       </defs>
       <g stroke="none" strokeWidth={1} fill="none" fillRule="evenodd">
-        <use fill="#000" filter="url(#hotsale-shadow)" xlinkHref="#hotsale-rect" />
+        <use
+          fill="#000"
+          filter="url(#hotsale-shadow)"
+          xlinkHref="#hotsale-rect"
+        />
         <use fill="#FFF" xlinkHref="#hotsale-rect" />
         <text
           fontFamily="PingFangTC-Semibold, PingFang TC"
-          fontSize={41}
+          fontSize={25}
           fontWeight={500}
           letterSpacing={2.79407569}
           fill="#F42B63"
         >
-          <tspan x={46.4118486} y={62}>
-            {'\u71B1\u92B7\u4E2D\uFF01'}
+          <tspan x={78} y={40}>
+            支持防疫
+          </tspan>
+          <tspan x={78} y={75}>
+            限時免費
           </tspan>
         </text>
       </g>
