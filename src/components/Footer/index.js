@@ -58,6 +58,11 @@ function Footer() {
               Instagram
             </a>
           </li>
+          <li>
+            <a className={styles.link} href="https://t.me/podcast_echo">
+              Telegram
+            </a>
+          </li>
         </ul>
       </div>
       <small className={styles.copyright}>
