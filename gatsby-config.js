@@ -45,7 +45,6 @@ module.exports = {
         trackingId: 'UA-114999968-1',
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -66,6 +65,7 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-postcss`,
+    `gatsby-plugin-material-ui`,
+    `gatsby-plugin-top-layout`,
   ],
 };

@@ -1,37 +1,67 @@
 import React from 'react';
-import LapTopPhoneSvg from './LapTopPhoneSvg';
-import GooglePic from '../../assets/Home/google-play-badge.png';
-import styles from './MainSection.module.css';
-import AppleStoreSvg from '../../assets/Home/Download_on_the_App_Store_Badge_CNTC_RGB_blk_100217.svg';
+import { makeStyles } from '@material-ui/styles';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    width: '100%',
+    paddingTop: theme.spacing(16),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(8),
+    },
+    paddingBottom: theme.spacing(16),
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: theme.spacing(8),
+    },
+    textAlign: 'center',
+    position: 'relative',
+  },
+  title: {
+    marginBottom: theme.spacing(6),
+    fontWeight: 'bold',
+  },
+  description: {
+    marginBottom: theme.spacing(6),
+  },
+  button: {
+    height: 50,
+    width: 150,
+  },
+  background: {
+    backgroundColor: 'steelblue',
+    width: '100%',
+    height: 300,
+    position: 'absolute',
+    bottom: 0,
+    zIndex: -1,
+  },
+}));
 
 function MainSection() {
+  const classes = useStyles();
+
   return (
-    <section className={styles.container}>
-      <div className={styles.left}>
-        <h1 className={styles.title}>
-          最簡單的
-          <br /> Podcast 製作工具
-        </h1>
-        <a className={styles.button} href="https://studio.firstory.me">
-          開始自己的 Podcast！
-        </a>
-        <div className={styles.buttonRow}>
-          <a href="https://apps.apple.com/app/id1351170844">
-            <img
-              src={AppleStoreSvg}
-              className={styles.image}
-              alt="Apple Store"
-            />
-          </a>
-          <a href="https://play.google.com/store/apps/details?id=com.firstory">
-            <img src={GooglePic} alt="Google Play" className={styles.image} />
-          </a>
-        </div>
-      </div>
-      <div className={styles.imageContainer}>
-        <LapTopPhoneSvg />
-      </div>
-    </section>
+    <div className={classes.container}>
+      <Typography variant="h4" className={classes.title}>
+        Hey! 我們是 Firstory
+      </Typography>
+      <Typography className={classes.description}>
+        我們相信每個人都是故事人，相信聲音和分享的力量。
+        <br />
+        只需簡單錄製，剩下發布就交給 Firstory， <br />
+        們會讓全世界都聽得到你的故事。
+      </Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        className={classes.button}
+      >
+        立即加入
+      </Button>
+      <div className={classes.background} />
+    </div>
   );
 }
 

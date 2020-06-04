@@ -1,60 +1,135 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import cx from 'classnames';
-import styles from './Navbar.module.css';
-import Menu from '../../assets/menu.svg';
-import WebLogoSvg from './WebLogoSvg';
+import { makeStyles } from '@material-ui/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Drawer from '@material-ui/core/Drawer';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Logo from './Logo';
+
+const useStyles = makeStyles(theme => ({
+  appBar: {
+    backgroundColor: 'white',
+    boxShadow: 'none',
+  },
+  logo: {
+    width: 36,
+    height: 36,
+    marginRight: theme.spacing(1),
+  },
+  title: {
+    flexGrow: 1,
+    fontWeight: 'bold',
+    display: 'flex',
+    color: theme.palette.text.primary,
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'none',
+    },
+  },
+  toolbarButton: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
+  hideOnLarge: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
+  list: {
+    width: 250,
+  },
+}));
+
+const items = [
+  {
+    props: {
+      component: Link,
+      to: '/help',
+    },
+    text: '幫助中心',
+  },
+  {
+    props: {
+      component: Link,
+      to: '/pricing',
+    },
+    text: '資費方案',
+  },
+  {
+    props: {
+      component: 'a',
+      href: 'https://open.firstory.me',
+      target: '_blank',
+    },
+    text: '瀏覽節目',
+  },
+  {
+    props: {
+      component: 'a',
+      href: 'https://studio.firstory.me',
+      target: '_blank',
+    },
+    text: '登入',
+  },
+];
 
 function Navbar() {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
+  const handleOpen = React.useCallback(() => {
+    setOpen(true);
+  }, []);
+
+  const handleClose = React.useCallback(() => {
+    setOpen(false);
+  }, []);
+
   return (
-    <header className={styles.header}>
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <Link to="/" className={styles.titleLink}>
-            <WebLogoSvg className={styles.logo} />
-            <div className={styles.title}>Firstory</div>
-          </Link>
-          <div className={styles.padding} />
-          <nav className={styles.navItem}>
-            <Link to="/help">幫助中心</Link>
-          </nav>
-          <nav className={styles.navItem}>
-            <Link to="/pricing">資費方案</Link>
-          </nav>
-          <nav className={styles.navItem}>
-            <a href="https://open.firstory.me">瀏覽節目</a>
-          </nav>
-          <nav className={cx(styles.navItem, styles.startPodcast)}>
-            <a href="https://studio.firstory.me">開始 Podcast</a>
-          </nav>
-          <img
-            className={styles.menuIcon}
-            src={Menu}
-            alt="menu"
-            onClick={() => setOpen(true)}
-          />
-        </div>
-      </div>
-      <div className={cx(styles.menu, { [styles.open]: open })}>
-        <div className={styles.menuClose} onClick={() => setOpen(false)}>
-          ×
-        </div>
-        <nav className={styles.menuItem}>
-          <Link to="/help">幫助中心</Link>
-        </nav>
-        <nav className={styles.menuItem}>
-          <Link to="/pricing">資費方案</Link>
-        </nav>
-        <nav className={styles.menuItem}>
-          <a href="https://open.firstory.me">瀏覽節目</a>
-        </nav>
-        <nav className={cx(styles.menuItem, styles.startPodcast)}>
-          <a href="https://studio.firstory.me">開始 Podcast</a>
-        </nav>
-      </div>
-    </header>
+    <AppBar position="sticky" color="default" className={classes.appBar}>
+      <Toolbar>
+        <Link to="/" className={classes.title}>
+          <Logo className={classes.logo} />
+          <Typography variant="h6">Firstory</Typography>
+        </Link>
+        {items.map(item => (
+          <Button
+            key={item.text}
+            {...item.props}
+            className={classes.toolbarButton}
+          >
+            {item.text}
+          </Button>
+        ))}
+        <IconButton
+          edge="start"
+          className={classes.hideOnLarge}
+          color="inherit"
+          aria-label="menu"
+          onClick={handleOpen}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Drawer anchor="right" open={open} onClose={handleClose}>
+          <List className={classes.list}>
+            {items.map(item => (
+              <ListItem button key={item.text} {...item.props}>
+                <ListItemText primary={item.text} />
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
+      </Toolbar>
+    </AppBar>
   );
 }
 
