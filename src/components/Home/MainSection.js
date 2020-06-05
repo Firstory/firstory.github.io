@@ -35,6 +35,14 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     bottom: 0,
     zIndex: -1,
+    [theme.breakpoints.down('sm')]: {
+      height: 250,
+    },
+  },
+  background: {
+    [theme.breakpoints.down('sm')]: {
+      height: '100%',
+    },
   },
 }));
 
