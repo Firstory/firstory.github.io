@@ -64,24 +64,22 @@ const useStyles = makeStyles(theme => ({
     whiteSpace: 'pre-line',
     marginBottom: theme.spacing(2),
   },
-  imageWrapper: {},
   imageContainer: {
     width: '50%',
-    height: 300,
+    height: 350,
     position: 'absolute',
     left: props => (props.reverse ? 0 : 'auto'),
     right: props => (props.reverse ? 'auto' : 0),
     bottom: 0,
     zIndex: -1,
     [theme.breakpoints.down('md')]: {
-      height: 200,
+      height: 250,
     },
     [theme.breakpoints.down('xs')]: {
       position: 'relative',
       width: '100%',
       padding: theme.spacing(0, 2),
       marginTop: -50,
-      height: 200,
     },
   },
   image: {

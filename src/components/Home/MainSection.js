@@ -35,6 +35,9 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     bottom: 0,
     zIndex: -1,
+    [theme.breakpoints.down('sm')]: {
+      height: 250,
+    },
   },
   background: {
     [theme.breakpoints.down('sm')]: {
@@ -67,7 +70,7 @@ function MainSection() {
         我們相信每個人都是故事人，相信聲音和分享的力量。
         <br />
         只需簡單錄製，剩下發布就交給 Firstory， <br />
-        我們是 Podcastor 最強的後盾
+        我們是 Podcaster 最強的後盾
       </Typography>
       <Button
         variant="contained"
