@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       paddingTop: theme.spacing(8),
     },
-    paddingBottom: theme.spacing(16),
+    paddingBottom: theme.spacing(20),
     [theme.breakpoints.down('sm')]: {
       paddingBottom: theme.spacing(8),
     },
@@ -35,9 +35,6 @@ const useStyles = makeStyles(theme => ({
     position: 'absolute',
     bottom: 0,
     zIndex: -1,
-    [theme.breakpoints.down('sm')]: {
-      height: 250,
-    },
   },
   background: {
     [theme.breakpoints.down('sm')]: {
@@ -63,14 +60,14 @@ function MainSection() {
 
   return (
     <div className={classes.container}>
-      <Typography variant="h4" className={classes.title}>
-        Hey! 我們是 Firstory
+      <Typography variant="h3" className={classes.title}>
+        你的聲音，無遠弗屆
       </Typography>
       <Typography variant="h6" className={classes.description}>
         我們相信每個人都是故事人，相信聲音和分享的力量。
         <br />
         只需簡單錄製，剩下發布就交給 Firstory， <br />
-        們會讓全世界都聽得到你的故事。
+        我們是 Podcastor 最強的後盾
       </Typography>
       <Button
         variant="contained"

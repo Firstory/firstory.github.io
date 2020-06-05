@@ -10,6 +10,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         postsRemark: allMarkdownRemark(
+          filter: { fields: { slug: { regex: "/(policy|help)/" } } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -39,7 +40,6 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   const posts = result.data.postsRemark.edges;
-
   posts.forEach((post, index) => {
     createPage({
       path: post.node.fields.slug,
