@@ -110,10 +110,10 @@ function Footer() {
       <footer className={classes.container}>
         <Container maxWidth="md">
           <Grid container className={classes.row}>
-            {footers.map(column => (
-              <Grid item xs={6}>
-                {column.map(item => (
-                  <MuiLink className={classes.link} {...item.props}>
+            {footers.map((column, i) => (
+              <Grid key={i} item xs={6}>
+                {column.map((item, j) => (
+                  <MuiLink key={j} className={classes.link} {...item.props}>
                     {item.text}
                   </MuiLink>
                 ))}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -91,6 +92,7 @@ function FeatureRow({
   description,
   color,
   backgroundColor,
+  image,
   reverse,
 }) {
   const classes = useStyles({ color, backgroundColor, reverse });
@@ -116,7 +118,7 @@ function FeatureRow({
           <div className={classes.infoBackground} />
         </div>
         <div className={classes.imageContainer}>
-          <div className={classes.image}></div>
+          <Img fluid={image.childImageSharp.fluid} className={classes.image} />
         </div>
       </div>
     </Container>

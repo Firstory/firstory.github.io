@@ -1,4 +1,6 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -28,10 +30,8 @@ const useStyles = makeStyles(theme => ({
     height: 50,
     width: 150,
   },
-  background: {
-    backgroundColor: 'steelblue',
+  backgroundContainer: {
     width: '100%',
-    height: 300,
     position: 'absolute',
     bottom: 0,
     zIndex: -1,
@@ -40,6 +40,18 @@ const useStyles = makeStyles(theme => ({
 
 function MainSection() {
   const classes = useStyles();
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "home/landscape.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <div className={classes.container}>
@@ -60,7 +72,13 @@ function MainSection() {
       >
         立即加入
       </Button>
-      <div className={classes.background} />
+      <div className={classes.backgroundContainer}>
+        <Img
+          fluid={data.file.childImageSharp.fluid}
+          alt="background"
+          className={classes.background}
+        />
+      </div>
     </div>
   );
 }
