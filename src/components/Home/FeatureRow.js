@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
   info: {
     position: 'relative',
     padding: theme.spacing(6, 8),
+    paddingLeft: props => (props.reverse ? '20%' : theme.spacing(6)),
     paddingBottom: theme.spacing(8),
     width: '70%',
     marginLeft: props => (props.reverse ? '30%' : 0),
@@ -29,6 +30,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: props => (props.reverse ? 'flex-end' : 'flex-start'),
     [theme.breakpoints.down('md')]: {
       padding: theme.spacing(4),
+      paddingLeft: props => (props.reverse ? '20%' : theme.spacing(4)),
     },
     [theme.breakpoints.down('xs')]: {
       marginLeft: props => (props.reverse ? 0 : 0),

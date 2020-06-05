@@ -46,13 +46,21 @@ const useStyles = makeStyles(theme => ({
     height: 100,
     backgroundColor: '#555',
     borderRadius: 10,
+    overflow: 'hidden',
   },
   otherTitle: {
     textAlign: 'center',
     margin: theme.spacing(4, 0),
   },
   otherImage: {
+    width: 120,
+    height: 120,
     margin: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      height: 70,
+      width: 70,
+      margin: theme.spacing(0.8),
+    },
   },
   otherRow: {
     width: '100%',
@@ -69,8 +77,8 @@ function useCreatorData() {
         nodes {
           name
           childImageSharp {
-            fixed(width: 100, height: 100) {
-              ...GatsbyImageSharpFixed
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -123,6 +131,16 @@ Firstory 給人一種，
       'kaosensei',
       'simone',
       'beallmouth',
+      'actor',
+      'allen',
+      'chew-chew',
+      'culture',
+      'laugh-shot',
+      'mama',
+      'otr',
+      'roommate',
+      'song',
+      'zebra',
     ].map(name => imgMap[name]);
 
     return { recommendations, others };
@@ -144,7 +162,7 @@ function CreatorSection() {
               <CardContent className={classes.cardContent}>
                 <div>
                   <Img
-                    fixed={r.image.childImageSharp.fixed}
+                    fluid={r.image.childImageSharp.fluid}
                     className={classes.image}
                   />
                   <Typography className={classes.description}>
@@ -171,7 +189,7 @@ function CreatorSection() {
         {others.map((image, i) => (
           <Img
             key={i}
-            fixed={image.childImageSharp.fixed}
+            fluid={image.childImageSharp.fluid}
             className={cx(classes.image, classes.otherImage)}
           />
         ))}

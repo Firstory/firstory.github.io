@@ -121,13 +121,17 @@ function useFeatureData() {
         subtitle: '找到你的第一批聽眾',
         title: 'Podcast 社群推廣服務',
         description: `透過 Instagram、Telegram 等社群平台，
-我們幫助你最快找到第一批有興趣的聽眾。`,
+我們幫你找到第一批喜愛你的聽眾。`,
         color: '#dfa71b',
         backgroundColor: '#fff4d8',
         image: imgMap.community,
         bottom: (
           <div className={classes.buttonRow}>
             {[
+              {
+                href: 'https://www.facebook.com/firstory.inc',
+                text: '追蹤我們的 FB',
+              },
               {
                 href: 'https://www.instagram.com/firstory_lab',
                 text: '追蹤我們的 IG',
@@ -136,7 +140,10 @@ function useFeatureData() {
                 href: 'https://t.me/firstory',
                 text: '加入 Telegram 頻道',
               },
-              { href: 'https://medium.com/firstory', text: '追蹤我們 Medium' },
+              {
+                href: 'https://medium.com/firstory',
+                text: '追蹤我們的 Medium',
+              },
             ].map(button => (
               <Button
                 key={button.text}
@@ -177,6 +184,7 @@ function useFeatureData() {
               href="https://medium.com/firstory/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-firstory-%E7%87%9F%E5%88%A9%E5%8A%9F%E8%83%BD%E8%88%87%E6%8F%90%E9%A0%98-567853997d93"
               target="_blank"
               variant="contained"
+              size="large"
               className={classes.donateButton}
             >
               如何設定贊助
@@ -209,6 +217,7 @@ function useFeatureData() {
               href="https://m.me/firstory.inc"
               target="_blank"
               variant="contained"
+              size="large"
               className={classes.contactButton}
             >
               聯絡我們
@@ -231,6 +240,7 @@ function useFeatureData() {
               href="https://lazicorner.com/"
               target="_blank"
               variant="contained"
+              size="large"
               className={classes.laziButton}
             >
               預訂錄音室
