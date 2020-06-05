@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
+import PreviewImage from '../assets/content-startup.jpg';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -74,7 +75,7 @@ function ContentStartup() {
 
   return (
     <Layout hideCampaign>
-      <Seo />
+      <Seo title="Firstory 內容啟動計劃" image={PreviewImage} />
       <div className={classes.container}>
         <Container maxWidth="sm">
           <Img

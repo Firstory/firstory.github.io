@@ -2,6 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/styles';
+import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
@@ -63,15 +64,17 @@ function MainSection() {
 
   return (
     <div className={classes.container}>
-      <Typography variant="h3" className={classes.title}>
-        你的聲音，無遠弗屆
-      </Typography>
-      <Typography variant="h6" className={classes.description}>
-        我們相信每個人都是故事人，相信聲音和分享的力量。
-        <br />
-        只需簡單錄製，剩下發布就交給 Firstory， <br />
-        我們是 Podcaster 最強的後盾
-      </Typography>
+      <Container>
+        <Typography variant="h3" className={classes.title}>
+          你的聲音，無遠弗屆
+        </Typography>
+        <Typography variant="h6" className={classes.description}>
+          我們相信每個人都是故事人，相信聲音和分享的力量。
+          <br />
+          只需簡單錄製，剩下發布就交給 Firstory， <br />
+          我們是 Podcaster 最強的後盾
+        </Typography>
+      </Container>
       <Button
         variant="contained"
         color="primary"
