@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbarButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
   },

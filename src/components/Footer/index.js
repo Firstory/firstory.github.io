@@ -1,17 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import MuiLink from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/styles';
-
-const theme = createMuiTheme({
-  palette: {
-    type: 'dark',
-  },
-});
+import { darkTheme } from '../../theme';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -21,10 +16,11 @@ const useStyles = makeStyles(theme => ({
   row: {
     marginBottom: theme.spacing(4),
   },
-  link: {
-    display: 'block',
-    color: 'white',
+  linkContainer: {
     margin: theme.spacing(2),
+  },
+  link: {
+    color: 'white',
   },
   copyright: {
     display: 'block',
@@ -34,13 +30,6 @@ const useStyles = makeStyles(theme => ({
 
 const footers = [
   [
-    {
-      props: {
-        component: Link,
-        to: '/#feature',
-      },
-      text: '功能特色',
-    },
     {
       props: {
         component: Link,
@@ -99,6 +88,13 @@ const footers = [
       },
       text: 'Telegram',
     },
+    {
+      props: {
+        component: 'a',
+        href: 'https://medium.com/firstory',
+      },
+      text: 'Medium',
+    },
   ],
 ];
 
@@ -106,16 +102,18 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={darkTheme}>
       <footer className={classes.container}>
         <Container maxWidth="md">
           <Grid container className={classes.row}>
-            {footers.map(column => (
-              <Grid item xs={6}>
-                {column.map(item => (
-                  <MuiLink className={classes.link} {...item.props}>
-                    {item.text}
-                  </MuiLink>
+            {footers.map((column, i) => (
+              <Grid key={i} item xs={6}>
+                {column.map((item, j) => (
+                  <div key={j} className={classes.linkContainer}>
+                    <MuiLink className={classes.link} {...item.props}>
+                      {item.text}
+                    </MuiLink>
+                  </div>
                 ))}
               </Grid>
             ))}

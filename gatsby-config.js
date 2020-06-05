@@ -16,6 +16,13 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/assets`,
+        name: 'assets',
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -52,7 +59,7 @@ module.exports = {
         short_name: 'Firstory',
         start_url: '/',
         background_color: '#ffffff',
-        theme_color: '#663399',
+        theme_color: '#fb355e',
         display: 'minimal-ui',
         icon: 'src/content/assets/icon.png',
       },
