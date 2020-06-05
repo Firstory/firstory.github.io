@@ -1,18 +1,27 @@
 import React from 'react';
 import cx from 'classnames';
-import styles from './Pricing.module.css';
-import { i18n } from '../../i18n';
-import ComingSoon from './ComingSoon';
-import Available from './Available';
-import NotAvailable from './NotAvailable';
-import HotSale from './HotSale';
+import { ThemeProvider, makeStyles } from '@material-ui/styles';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import CheckIcon from '@material-ui/icons/Check';
+import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+import CloseIcon from '@material-ui/icons/Close';
 import Rocket from './Rocket';
 import { plans, developing, planBits, featureList } from './constants';
+import { i18n } from '../../i18n';
+import { lightTheme, darkTheme } from '../../theme';
 
 const planNames = {
   FREE: '基本方案',
   PREMIUM: '標準方案',
   ENTERPRISE: '企業方案',
+};
+
+const buttonTexts = {
+  FREE: '馬上開始',
+  PREMIUM: '限時終生免費',
+  ENTERPRISE: '聯絡我們',
 };
 
 const limits = {
@@ -21,121 +30,197 @@ const limits = {
   ENTERPRISE: 0,
 };
 
-function PlanColumn({ plan, active, onPaymentClick }) {
+const useStyles = makeStyles(theme => ({
+  container: {
+    flex: 1,
+    padding: theme.spacing(2),
+    borderRadius: 10,
+    position: 'relative',
+  },
+  rocket: {
+    position: 'absolute',
+    top: 0,
+    left: -20,
+    height: 150,
+    transform: 'translateY(-50%)',
+  },
+  hotSale: {
+    position: 'absolute',
+    top: 0,
+    left: '50%',
+    borderRadius: 5,
+    background: 'white',
+    color: lightTheme.palette.primary.main,
+    padding: theme.spacing(1, 2),
+    transform: 'translate(-50%, -50%)',
+  },
+  hotSaleText: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  premium: {
+    flex: 1.25,
+    margin: theme.spacing(0, 2),
+    paddingTop: theme.spacing(8),
+    background:
+      'linear-gradient(to bottom, rgb(244, 41, 99), rgb(240, 151, 20))',
+    [theme.breakpoints.down('sm')]: {
+      margin: 0,
+      marginTop: theme.spacing(4),
+    },
+  },
+  premiumText: {
+    color: 'white',
+  },
+  notActive: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
+  title: {
+    textAlign: 'center',
+    marginBottom: theme.spacing(4),
+  },
+  price: {
+    textAlign: 'center',
+    color: '#10cfaa',
+    '&$premiumText': {
+      color: 'white',
+    },
+  },
+  buttonContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    margin: theme.spacing(4, 0),
+  },
+  button: {},
+  limit: {
+    textAlign: 'center',
+    marginBottom: theme.spacing(4),
+  },
+  limitTime: {
+    margin: theme.spacing(1, 0),
+  },
+  feature: {
+    display: 'flex',
+    padding: theme.spacing(2),
+  },
+  unavailableFeature: {
+    opacity: 0.3,
+  },
+  featureIcon: {
+    marginRight: theme.spacing(2),
+  },
+  featureText: {
+    fontWeight: 'bold',
+  },
+}));
+
+function PlanColumn({ plan, active }) {
+  const classes = useStyles();
+
   return (
-    <div
-      className={cx(styles.planBlock, {
-        [styles.planBlockPremium]: plan === plans.PREMIUM,
-        [styles.planBlockNotActive]: !active,
-      })}
-    >
-      {plan === plans.PREMIUM && (
-        <div className={styles.absoluteRow}>
-          <Rocket alt="Rocket" className={styles.rocket} />
-          <HotSale alt="Hot sale" className={styles.hotSale} />
-        </div>
-      )}
-      <div
-        className={cx(styles.planName, {
-          [styles.planTextPremium]: plan === plans.PREMIUM,
+    <ThemeProvider theme={plan === plans.PREMIUM ? darkTheme : lightTheme}>
+      <Paper
+        elevation={3}
+        className={cx(classes.container, {
+          [classes.premium]: plan === plans.PREMIUM,
+          [classes.notActive]: !active,
         })}
       >
-        {planNames[plan]}
-      </div>
-      {plan === plans.PREMIUM ? (
-        <>
-          <div className={cx(styles.planPrice, styles.planTextPremium)}>
-            NT$249 / 月
-          </div>
-          <div className={styles.planPriceDescription}>
-            年繳{'\n'}或者月繳 NT$299 / 月
-          </div>
-        </>
-      ) : (
-        <div className={styles.planPrice}>
-          {plan === plans.FREE ? '免費' : '聯絡我們'}
-        </div>
-      )}
-      <a
-        href={
-          plan === plans.ENTERPRISE
-            ? 'https://m.me/firstory.inc'
-            : 'https://studio.firstory.me'
-        }
-        className={cx(
-          styles.planButton,
-          plan === plans.PREMIUM
-            ? styles.planButtonStroke
-            : styles.planButtonNormal,
+        {plan === plans.PREMIUM && (
+          <>
+            <Rocket alt="Rocket" className={classes.rocket} />
+            <Paper className={classes.hotSale}>
+              <Typography color="primary" className={classes.hotSaleText}>
+                支持防疫
+                <br />
+                限時免費
+              </Typography>
+            </Paper>
+          </>
         )}
-      >
-        {plan === plans.FREE
-          ? '馬上開始'
-          : plan === plans.PREMIUM
-          ? '限時終生免費'
-          : '聯絡我們'}
-      </a>
-      <div
-        className={cx(styles.planMonthly, {
-          [styles.planTextPremium]: plan === plans.PREMIUM,
-        })}
-      >
-        每個月
-        <div
-          className={cx(styles.planLimit, {
-            [styles.planTextPremium]: plan === plans.PREMIUM,
-          })}
+        <Typography
+          variant="h5"
+          color="textPrimary"
+          className={cx(classes.title)}
         >
-          {limits[plan] ? `${limits[plan]} 小時` : '無限制'}
-        </div>
-        上傳時間
-      </div>
-      {Object.keys(featureList).map(f => {
-        let className;
-        let alt;
-        let Icon;
-        if (featureList[f] & planBits[plan]) {
-          if (featureList[f] & developing) {
-            className = styles.developingFeature;
-            alt = 'Coming Soon';
-            Icon = ComingSoon;
-          } else {
-            className = styles.availableFeature;
-            alt = 'Available';
-            Icon = Available;
-          }
-        } else {
-          className =
-            plan === plans.PREMIUM
-              ? styles.unavailablePremium
-              : styles.unavailableFeature;
-          alt = 'Not Available';
-          Icon = NotAvailable;
-        }
-        return (
-          <div
-            key={f}
-            className={cx(styles.planTextRow, className, {
-              [styles.planRowPremium]: plan === plans.PREMIUM,
-            })}
-          >
-            <Icon
-              alt={alt}
-              className={cx(styles.icon, className, {
-                [styles.iconPremium]: plan === plans.PREMIUM,
-              })}
-            />
-            <div
-              className={cx(styles.planText, className, {
-                [styles.planTextPremium]: plan === plans.PREMIUM,
-              })}
+          {planNames[plan]}
+        </Typography>
+        {plan === plans.PREMIUM ? (
+          <>
+            <Typography
+              variant="h6"
+              className={cx(classes.price, classes.premiumText)}
             >
-              {i18n.zh.pricing[f]}
+              NT$249 / 月
+            </Typography>
+            <Typography
+              variant="caption"
+              component="p"
+              className={cx(classes.price, classes.premiumText)}
+            >
+              年繳
+              <br />
+              或者月繳 NT$299 / 月
+            </Typography>
+          </>
+        ) : (
+          <Typography variant="h6" className={classes.price}>
+            {plan === plans.FREE ? '免費' : '聯絡我們'}
+          </Typography>
+        )}
+        <div className={classes.buttonContainer}>
+          <Button
+            className={classes.button}
+            variant={plan === plans.PREMIUM ? 'contained' : 'outlined'}
+            color={plan === plans.PREMIUM ? 'secondary' : 'default'}
+            size="large"
+          >
+            {buttonTexts[plan]}
+          </Button>
+        </div>
+        <Typography variant="h6" color="default" className={classes.limit}>
+          每個月
+          <Typography
+            variant="h4"
+            color={plan === plans.PREMIUM ? 'default' : 'secondary'}
+            className={classes.limitTime}
+          >
+            {limits[plan] ? `${limits[plan]} 小時` : '無限制'}
+          </Typography>
+          上傳時間
+        </Typography>
+        {Object.keys(featureList).map(f => {
+          let className;
+          let alt;
+          let Icon;
+          if (featureList[f] & planBits[plan]) {
+            if (featureList[f] & developing) {
+              className = classes.developingFeature;
+              alt = 'Coming Soon';
+              Icon = RadioButtonCheckedIcon;
+            } else {
+              className = classes.availableFeature;
+              alt = 'Available';
+              Icon = CheckIcon;
+            }
+          } else {
+            className = classes.unavailableFeature;
+            alt = 'Not Available';
+            Icon = CloseIcon;
+          }
+          return (
+            <div key={f} className={classes.feature}>
+              <Icon className={cx(classes.featureIcon, className)} alt={alt} />
+              <Typography className={cx(classes.featureText, className)}>
+                {i18n.zh.pricing[f]}
+              </Typography>
             </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </Paper>
+    </ThemeProvider>
   );
 }
 

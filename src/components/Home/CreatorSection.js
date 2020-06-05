@@ -94,13 +94,13 @@ function useCreatorData() {
       {
         image: imgMap.william,
         description: `感謝 Firstory 大大，
-firstory 給人一種，
+Firstory 給人一種，
 只要你有才華、有想法，再素的素人都有發聲的機會。
 有了自己的節目就像是有了自己的小孩，
 就像生小孩一樣，
 原本想說做 podcast 不就聊聊天錄下來而已嗎？
 結果小孩生下去才發現乾真的是忙到靠北，
-好險有 firstory 的贊助功能，
+好險有 Firstory 的贊助功能，
 讓你在每個崩潰邊緣、無力感襲擊、
 很想把小孩塞回去的 moment 都有了再做兩集的動力！`,
         author: '威廉',

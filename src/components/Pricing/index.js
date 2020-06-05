@@ -1,62 +1,90 @@
 import React from 'react';
-import cx from 'classnames';
-import mixpanel from 'mixpanel-browser';
+import { makeStyles } from '@material-ui/styles';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import Button from '@material-ui/core/Button';
 import PlanColumn from './PlanColumn';
 import ComingSoon from './ComingSoon';
 import { plans } from './constants';
-import styles from './Pricing.module.css';
 
-mixpanel.init('1fa276e4e72e21867df7c429e861eecf');
+const useStyles = makeStyles(theme => ({
+  container: {
+    paddingTop: theme.spacing(6),
+  },
+  title: {
+    textAlign: 'center',
+  },
+  subtitle: {
+    textAlign: 'center',
+    marginBottom: theme.spacing(4),
+  },
+  buttonRow: {
+    display: 'none',
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
+  },
+  planSection: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    paddingTop: theme.spacing(12),
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(6),
+    },
+  },
+  comingSoon: {
+    display: 'flex',
+    margin: theme.spacing(4, 0),
+  },
+  iconHint: {
+    width: 20,
+    height: 20,
+  }
+}));
 
 function Pricing() {
+  const classes = useStyles();
   const [plan, setPlan] = React.useState(plans.PREMIUM);
 
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>
-          升級成為 Firstory Infinity 讓您的節目飛上太空！
-        </h2>
-        <div className={styles.planTitle}>
-          防疫期間在家錄 Podcast 最安全，現在註冊即享有終身免費！
-        </div>
-        <div className={styles.buttonRow}>
-          <button
-            className={cx(styles.tabButton, styles.tabButtonLeft, {
-              [styles.tabActive]: plan === plans.FREE,
-            })}
-            onClick={() => setPlan(plans.FREE)}
-          >
-            基本方案
-          </button>
-          <button
-            className={cx(styles.tabButton, styles.tabButtonMid, {
-              [styles.tabActive]: plan === plans.PREMIUM,
-            })}
-            onClick={() => setPlan(plans.PREMIUM)}
-          >
-            標準方案
-          </button>
-          <button
-            className={cx(styles.tabButton, styles.tabButtonRight, {
-              [styles.tabActive]: plan === plans.ENTERPRISE,
-            })}
-            onClick={() => setPlan(plans.ENTERPRISE)}
-          >
-            企業方案
-          </button>
-        </div>
-        <div className={styles.planSection}>
-          <PlanColumn plan="FREE" active={plan === plans.FREE} />
-          <PlanColumn plan="PREMIUM" active={plan === plans.PREMIUM} />
-          <PlanColumn plan="ENTERPRISE" active={plan === plans.ENTERPRISE} />
-        </div>
-        <div className={styles.iconHint}>
-          <ComingSoon alt="Coming Soon" className={cx(styles.icon)} />
-          代表即將推出
-        </div>
+    <Container className={classes.container}>
+      <Typography variant="h4" className={classes.title}>
+        升級成為 Firstory Infinity 讓您的節目飛上太空！
+      </Typography>
+      <Typography variant="h5" className={classes.subtitle}>
+        防疫期間在家錄 Podcast 最安全，現在註冊即享有終身免費！
+      </Typography>
+      <div className={classes.buttonRow}>
+        <ButtonGroup disableElevation color="secondary">
+          {[
+            { plan: plans.FREE, text: '基本方案' },
+            { plan: plans.PREMIUM, text: '標準方案' },
+            { plan: plans.ENTERPRISE, text: '企業方案' },
+          ].map(p => (
+            <Button
+              key={p.text}
+              variant={plan === p.plan ? 'contained' : 'outlined'}
+              onClick={() => setPlan(p.plan)}
+            >
+              {p.text}
+            </Button>
+          ))}
+        </ButtonGroup>
       </div>
-    </section>
+      <div className={classes.planSection}>
+        <PlanColumn plan="FREE" active={plan === plans.FREE} />
+        <PlanColumn plan="PREMIUM" active={plan === plans.PREMIUM} />
+        <PlanColumn plan="ENTERPRISE" active={plan === plans.ENTERPRISE} />
+      </div>
+      <Typography variant="caption" className={classes.comingSoon}>
+        <ComingSoon alt="Coming Soon" className={classes.iconHint} />
+        代表即將推出
+      </Typography>
+    </Container>
   );
 }
 

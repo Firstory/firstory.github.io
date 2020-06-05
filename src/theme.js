@@ -14,30 +14,43 @@ const overrides = {
   },
 };
 
-const theme = createMuiTheme({
+const palette = {
+  primary: {
+    main: colors.tomato,
+  },
+  secondary: {
+    main: colors.softBlue,
+  },
+};
+
+const typography = {
+  h4: {
+    fontWeight: 'bold',
+  },
+  h5: {
+    fontWeight: 'bold',
+  },
+  h6: {
+    fontWeight: 'bold',
+  },
+};
+
+const lightTheme = createMuiTheme({
   palette: {
-    primary: {
-      main: colors.tomato,
-    },
-    secondary: {
-      main: colors.softBlue,
-    },
-    background: {
-      default: '#fff',
-    },
+    ...palette,
+    background: { default: '#fff' },
   },
-  typography: {
-    h4: {
-      fontWeight: 'bold',
-    },
-    h5: {
-      fontWeight: 'bold',
-    },
-    h6: {
-      fontWeight: 'bold',
-    },
-  },
+  typography,
   overrides,
 });
 
-export default theme;
+const darkTheme = createMuiTheme({
+  palette: {
+    ...palette,
+    type: 'dark',
+  },
+  typography,
+  overrides,
+});
+
+export { lightTheme, darkTheme };
