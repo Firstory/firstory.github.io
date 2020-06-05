@@ -90,7 +90,7 @@ function useFeatureData() {
       {
         subtitle: '為你的 Podcast 找一個家',
         title: 'Podcast Hosting 服務',
-        description: `我們的 Podcast Hosting 幫你最快上架到各大平台，
+        description: `幫你最快上架到各大平台，
 並且用最完整的數據分析節目成效。`,
         color: '#259271',
         backgroundColor: '#e9faf5',

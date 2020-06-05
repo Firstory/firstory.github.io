@@ -8,6 +8,7 @@ import { rhythm } from '../utils/typography';
 import sectionsTitle from './sections-title.json';
 
 function BlogPostTemplate({ data, pageContext, location }) {
+  console.log(data, pageContext);
   const { slug } = pageContext;
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;

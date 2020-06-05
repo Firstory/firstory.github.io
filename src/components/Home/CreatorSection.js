@@ -33,6 +33,14 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(4),
     whiteSpace: 'pre-line',
   },
+  author: {
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontStyle: 'italic',
+  },
   image: {
     width: 100,
     height: 100,
@@ -132,19 +140,25 @@ function CreatorSection() {
       <Grid container spacing={4} className={classes.recommendationRow}>
         {recommendations.map(r => (
           <Grid key={r.title} item sm={6} xs={12}>
-            <Card elevation={4} className={classes.card}>
+            <Card elevation={5} className={classes.card}>
               <CardContent className={classes.cardContent}>
-                <Img
-                  fixed={r.image.childImageSharp.fixed}
-                  className={classes.image}
-                />
-                <Typography className={classes.description}>
-                  {r.description}
-                </Typography>
-                <Typography variant="h5">{r.author}，</Typography>
-                <Typography variant="h6">
-                  <Link href={r.url}>{r.title}</Link>，主持人/製作人
-                </Typography>
+                <div>
+                  <Img
+                    fixed={r.image.childImageSharp.fixed}
+                    className={classes.image}
+                  />
+                  <Typography className={classes.description}>
+                    {r.description}
+                  </Typography>
+                </div>
+                <div>
+                  <Typography className={classes.author}>
+                    {r.author}，
+                  </Typography>
+                  <Typography className={classes.title}>
+                    <Link href={r.url}>{r.title}</Link>，主持人/製作人
+                  </Typography>
+                </div>
               </CardContent>
             </Card>
           </Grid>

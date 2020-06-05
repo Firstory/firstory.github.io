@@ -33,13 +33,6 @@ const footers = [
     {
       props: {
         component: Link,
-        to: '/#feature',
-      },
-      text: '功能特色',
-    },
-    {
-      props: {
-        component: Link,
         to: '/pricing',
       },
       text: '資費方案',

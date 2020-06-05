@@ -78,7 +78,7 @@ function MainSection() {
         size="large"
         className={classes.button}
       >
-        立即加入
+        免費開始
       </Button>
       <div className={classes.backgroundContainer}>
         <Img

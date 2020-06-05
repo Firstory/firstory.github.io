@@ -11,6 +11,12 @@ const overrides = {
       borderRadius: 999,
       textTransform: 'none',
     },
+    contained: {
+      boxShadow: 'none',
+      '&:hover': {
+        boxShadow: 'none',
+      },
+    },
   },
 };
 
