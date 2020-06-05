@@ -81,7 +81,6 @@ const useStyles = makeStyles(theme => ({
   image: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'steelblue',
     borderRadius: 50,
   },
 }));
