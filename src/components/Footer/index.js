@@ -95,6 +95,13 @@ const footers = [
       },
       text: 'Telegram',
     },
+    {
+      props: {
+        component: 'a',
+        href: 'https://medium.com/firstory',
+      },
+      text: 'Medium',
+    },
   ],
 ];
 

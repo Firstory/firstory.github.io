@@ -132,7 +132,7 @@ function CreatorSection() {
       <Grid container spacing={4} className={classes.recommendationRow}>
         {recommendations.map(r => (
           <Grid key={r.title} item sm={6} xs={12}>
-            <Card className={classes.card}>
+            <Card elevation={4} className={classes.card}>
               <CardContent className={classes.cardContent}>
                 <Img
                   fixed={r.image.childImageSharp.fixed}

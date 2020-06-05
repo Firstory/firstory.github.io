@@ -66,7 +66,7 @@ function MainSection() {
       <Typography variant="h4" className={classes.title}>
         Hey! 我們是 Firstory
       </Typography>
-      <Typography className={classes.description}>
+      <Typography variant="h6" className={classes.description}>
         我們相信每個人都是故事人，相信聲音和分享的力量。
         <br />
         只需簡單錄製，剩下發布就交給 Firstory， <br />
@@ -82,6 +82,7 @@ function MainSection() {
       </Button>
       <div className={classes.backgroundContainer}>
         <Img
+          loading="eager"
           fluid={data.file.childImageSharp.fluid}
           alt="background"
           className={classes.background}
