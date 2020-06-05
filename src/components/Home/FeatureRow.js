@@ -34,6 +34,8 @@ const useStyles = makeStyles(theme => ({
     },
     [theme.breakpoints.down('xs')]: {
       marginLeft: props => (props.reverse ? 0 : 0),
+      paddingLeft: props =>
+        props.reverse ? theme.spacing(4) : theme.spacing(4),
       width: '100%',
       paddingBottom: theme.spacing(6),
     },
