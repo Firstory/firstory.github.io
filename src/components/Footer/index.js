@@ -79,7 +79,7 @@ const footers = [
         component: 'a',
         href: 'https://www.instagram.com/firstory_lab/',
       },
-      text: 'Facebook',
+      text: 'Instagram',
     },
     {
       props: {
