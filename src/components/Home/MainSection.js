@@ -80,6 +80,9 @@ function MainSection() {
         color="primary"
         size="large"
         className={classes.button}
+        component="a"
+        href="https://studio.firstory.me"
+        target="_blank"
       >
         免費開始
       </Button>

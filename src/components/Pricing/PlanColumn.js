@@ -176,6 +176,13 @@ function PlanColumn({ plan, active }) {
             variant={plan === plans.PREMIUM ? 'contained' : 'outlined'}
             color={plan === plans.PREMIUM ? 'secondary' : 'default'}
             size="large"
+            component="a"
+            href={
+              plan === plans.ENTERPRISE
+                ? 'https://m.me/firstory.inc'
+                : 'https://studio.firstory.me'
+            }
+            target="_blank"
           >
             {buttonTexts[plan]}
           </Button>

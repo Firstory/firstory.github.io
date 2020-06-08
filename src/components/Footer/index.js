@@ -95,6 +95,13 @@ const footers = [
       },
       text: 'Medium',
     },
+    {
+      props: {
+        component: 'a',
+        href: 'mailto:firstory.inc@gmail.com',
+      },
+      text: 'Email: firstory.inc@gmail.com',
+    },
   ],
 ];
 
