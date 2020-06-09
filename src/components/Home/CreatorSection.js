@@ -71,6 +71,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function useCreatorData() {
+  const url = 'https://open.firstory.me/user/';
   const imgData = useStaticQuery(graphql`
     query {
       allFile(filter: { relativePath: { glob: "home/creators/*" } }) {
@@ -105,7 +106,7 @@ function useCreatorData() {
 台灣 podcast 產業有你們真的是最幸福的事！`,
         author: '揚',
         title: 'Sex Chat 談性說愛',
-        url: '',
+        url: url + 'cjyqpf4a72q6v0743tfjdxhbg',
       },
       {
         image: imgMap.william,
@@ -121,28 +122,32 @@ Firstory 給人一種，
 很想把小孩塞回去的 moment 都有了再做兩集的動力！`,
         author: '威廉',
         title: '威廉不務正夜',
-        url: '',
+        url: url + 'ck3gpdxgj32ur08699i0drxzl',
       },
     ];
     const others = [
-      'unlock-the-earth',
-      'sound-in-taipei',
-      'two-girls',
-      'kaosensei',
-      'simone',
-      'beallmouth',
-      'actor',
-      'allen',
-      'chew-chew',
-      'culture',
-      'laugh-shot',
-      'mama',
-      'otr',
-      'roommate',
-      'song',
-      'zebra',
-      'dirty-talk',
-    ].map(name => imgMap[name]);
+      { id: 'cjzryn64q34i607580oyblh1u', image: 'unlock-the-earth' },
+      { id: 'ck07hgbx84y4z0786x4hxz28v', image: 'sound-in-taipei' },
+      { id: 'cjzdxzm7ic0vq0758o2u4rlnf', image: 'two-girls' },
+      { id: 'ck5uwly7z0w9i0b269okbedwo', image: 'kaosensei' },
+      { id: 'ck7nm4yhdh0zl0873wegbf5p3', image: 'simone' },
+      { id: 'ck7pj8m1ajal5087371m5v031', image: 'beallmouth' },
+      { id: 'ck50uxe0emkyv0b26hjueodgo', image: 'actor' },
+      { id: 'ck3kd7xa5de1g0869vu31f6gk', image: 'allen' },
+      { id: 'ck7prc6cvjr8o0873g1guzb5d', image: 'chew-chew' },
+      { id: 'ck50cjx0jm1n20b26nhdxp31l', image: 'culture' },
+      { id: 'ck81noc2ubda70873rqmdpod9', image: 'laugh-shot' },
+      { id: 'ck6tfukac1bfc0873jahvjqmn', image: 'mama' },
+      { id: 'cjw8ivs9ao8by0743a7wjlnqm', image: 'otr' },
+      { id: 'ck4v2m8m6fhlg0b26fo5il5yc', image: 'roommate' },
+      { id: 'ck7fri94o326d08736fcfnktu', image: 'song' },
+      { id: 'cka26w5n2p1x60873g74j1uom', image: 'zebra' },
+      { id: 'cka6k6bqhcrtk087375gj8mxj', image: 'dirty-talk' },
+    ].map(({ id, image }) => ({
+      id,
+      url: url + id,
+      image: imgMap[image],
+    }));
 
     return { recommendations, others };
   }, [imgMap]);
@@ -175,7 +180,10 @@ function CreatorSection() {
                     {r.author}，
                   </Typography>
                   <Typography className={classes.title}>
-                    <Link href={r.url}>{r.title}</Link>，主持人/製作人
+                    <Link href={r.url} target="_blank" rel="noreferrer">
+                      {r.title}
+                    </Link>
+                    ，主持人/製作人
                   </Typography>
                 </div>
               </CardContent>
@@ -187,12 +195,14 @@ function CreatorSection() {
         採用我們服務的 Podcaster
       </Typography>
       <div className={classes.otherRow}>
-        {others.map((image, i) => (
-          <Img
-            key={i}
-            fluid={image.childImageSharp.fluid}
-            className={cx(classes.image, classes.otherImage)}
-          />
+        {others.map(({ id, url, image }) => (
+          <a href={url} target="_blank" rel="noreferrer">
+            <Img
+              key={id}
+              fluid={image.childImageSharp.fluid}
+              className={cx(classes.image, classes.otherImage)}
+            />
+          </a>
         ))}
       </div>
       <Typography variant="h5" className={classes.otherTitle}>
