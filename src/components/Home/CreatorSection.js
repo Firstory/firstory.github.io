@@ -141,6 +141,7 @@ Firstory 給人一種，
       'roommate',
       'song',
       'zebra',
+      'dirty-talk',
     ].map(name => imgMap[name]);
 
     return { recommendations, others };
