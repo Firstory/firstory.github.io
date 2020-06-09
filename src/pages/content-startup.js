@@ -132,6 +132,7 @@ function ContentStartup() {
               size="large"
               href="https://medium.com/firstory/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-firstory-%E7%87%9F%E5%88%A9%E5%8A%9F%E8%83%BD%E8%88%87%E6%8F%90%E9%A0%98-567853997d93"
               target="_blank"
+              rel="noopener"
               className={classes.button}
             >
               設置贊助功能
@@ -159,6 +160,7 @@ function ContentStartup() {
               size="large"
               href="https://studio.firstory.me/invite-code"
               target="_blank"
+              rel="noopener"
               className={classes.button}
             >
               取得邀請碼

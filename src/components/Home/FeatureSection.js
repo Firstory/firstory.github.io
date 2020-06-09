@@ -150,6 +150,7 @@ function useFeatureData() {
                 component="a"
                 href={button.href}
                 target="_blank"
+                rel="noopener"
                 variant="contained"
                 className={classes.communityButton}
               >
@@ -183,6 +184,7 @@ function useFeatureData() {
               component="a"
               href="https://medium.com/firstory/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-firstory-%E7%87%9F%E5%88%A9%E5%8A%9F%E8%83%BD%E8%88%87%E6%8F%90%E9%A0%98-567853997d93"
               target="_blank"
+              rel="noopener"
               variant="contained"
               size="large"
               className={classes.donateButton}
@@ -216,6 +218,7 @@ function useFeatureData() {
               component="a"
               href="https://m.me/firstory.inc"
               target="_blank"
+              rel="noopener"
               variant="contained"
               size="large"
               className={classes.contactButton}
@@ -239,6 +242,7 @@ function useFeatureData() {
               component="a"
               href="https://lazicorner.com/"
               target="_blank"
+              rel="noopener"
               variant="contained"
               size="large"
               className={classes.laziButton}

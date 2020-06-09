@@ -65,10 +65,10 @@ function MainSection() {
   return (
     <div className={classes.container}>
       <Container>
-        <Typography variant="h3" className={classes.title}>
+        <Typography variant="h3" component="h1" className={classes.title}>
           你的聲音，無遠弗屆
         </Typography>
-        <Typography variant="h6" className={classes.description}>
+        <Typography variant="h6" component="p" className={classes.description}>
           我們相信每個人都是故事人，相信聲音和分享的力量。
           <br />
           只需簡單錄製，剩下發布就交給 Firstory， <br />
@@ -83,6 +83,7 @@ function MainSection() {
         component="a"
         href="https://studio.firstory.me"
         target="_blank"
+        rel="noopener"
       >
         免費開始
       </Button>

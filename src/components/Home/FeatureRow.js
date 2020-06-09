@@ -109,10 +109,14 @@ function FeatureRow({
       <div className={classes.wrapper}>
         <div className={classes.info}>
           <div>
-            <Typography variant="h6" className={classes.subtitle}>
+            <Typography
+              variant="h6"
+              component="h3"
+              className={classes.subtitle}
+            >
               {subtitle}
             </Typography>
-            <Typography variant="h4" className={classes.title}>
+            <Typography variant="h4" component="h2" className={classes.title}>
               {title}
             </Typography>
             <Typography

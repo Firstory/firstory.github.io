@@ -146,6 +146,7 @@ Firstory 給人一種，
     ].map(({ id, image }) => ({
       id,
       url: url + id,
+      name: image,
       image: imgMap[image],
     }));
 
@@ -180,7 +181,7 @@ function CreatorSection() {
                     {r.author}，
                   </Typography>
                   <Typography className={classes.title}>
-                    <Link href={r.url} target="_blank" rel="noreferrer">
+                    <Link href={r.url} target="_blank" rel="noopener">
                       {r.title}
                     </Link>
                     ，主持人/製作人
@@ -195,8 +196,13 @@ function CreatorSection() {
         採用我們服務的 Podcaster
       </Typography>
       <div className={classes.otherRow}>
-        {others.map(({ id, url, image }) => (
-          <a href={url} target="_blank" rel="noreferrer">
+        {others.map(({ id, url, name, image }) => (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={name}
+          >
             <Img
               key={id}
               fluid={image.childImageSharp.fluid}

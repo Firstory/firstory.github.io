@@ -183,6 +183,7 @@ function PlanColumn({ plan, active }) {
                 : 'https://studio.firstory.me'
             }
             target="_blank"
+            rel="noopener"
           >
             {buttonTexts[plan]}
           </Button>

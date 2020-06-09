@@ -37,6 +37,7 @@ function CallToAction() {
         component="a"
         href="https://studio.firstory.me"
         target="_blank"
+        rel="noopener"
         className={classes.button}
       >
         直接開始
