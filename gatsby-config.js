@@ -74,5 +74,13 @@ module.exports = {
     },
     `gatsby-plugin-material-ui`,
     `gatsby-plugin-top-layout`,
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Noto Sans TC'],
+        },
+      },
+    },
   ],
 };

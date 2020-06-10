@@ -39,6 +39,7 @@ const typography = {
   h6: {
     fontWeight: 'bold',
   },
+  fontFamily: ['"Noto Sans TC"', 'sans-serif'].join(','),
 };
 
 const lightTheme = createMuiTheme({

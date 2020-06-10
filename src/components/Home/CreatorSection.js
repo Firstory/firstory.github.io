@@ -79,7 +79,7 @@ function useCreatorData() {
           name
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -198,13 +198,13 @@ function CreatorSection() {
       <div className={classes.otherRow}>
         {others.map(({ id, url, name, image }) => (
           <a
+            key={id}
             href={url}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={name}
           >
             <Img
-              key={id}
               fluid={image.childImageSharp.fluid}
               className={cx(classes.image, classes.otherImage)}
             />

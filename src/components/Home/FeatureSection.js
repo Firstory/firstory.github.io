@@ -4,21 +4,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 import FeatureRow from './FeatureRow';
-import applePodcast from '../../assets/home/apple-podcasts.png';
-import googlePodcast from '../../assets/home/google-podcasts.svg';
-import spotify from '../../assets/home/spotify.svg';
-import soundon from '../../assets/home/soundon.png';
-import pocketcast from '../../assets/home/pocketcast.png';
+import PlatformRow from './PlatformRow';
 
 const useStyles = makeStyles(theme => ({
-  platformRow: {
-    display: 'flex',
-  },
-  platformIcon: {
-    width: 36,
-    height: 36,
-    marginRight: theme.spacing(2),
-  },
   buttonRow: {
     display: 'flex',
     justifyContent: ' flex-end',
@@ -70,7 +58,7 @@ function useFeatureData() {
           name
           childImageSharp {
             fluid {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -95,27 +83,7 @@ function useFeatureData() {
         color: '#259271',
         backgroundColor: '#e9faf5',
         image: imgMap.hosting,
-        bottom: (
-          <div className={classes.platformRow}>
-            <img
-              className={classes.platformIcon}
-              src={applePodcast}
-              alt="Apple Podcasts"
-            />
-            <img className={classes.platformIcon} src={spotify} alt="Spotify" />
-            <img
-              className={classes.platformIcon}
-              src={googlePodcast}
-              alt="Google Podcasts"
-            />
-            <img
-              className={classes.platformIcon}
-              src={pocketcast}
-              alt="Pocketcast"
-            />
-            <img className={classes.platformIcon} src={soundon} alt="SoundOn" />
-          </div>
-        ),
+        bottom: <PlatformRow />,
       },
       {
         subtitle: '找到你的第一批聽眾',

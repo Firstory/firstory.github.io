@@ -30,6 +30,8 @@ const useStyles = makeStyles(theme => ({
   button: {
     height: 50,
     width: 150,
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
   },
   backgroundContainer: {
     width: '100%',
@@ -55,7 +57,7 @@ function MainSection() {
       file(relativePath: { eq: "home/landscape.png" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
