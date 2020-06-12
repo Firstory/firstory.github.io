@@ -60,4 +60,4 @@ const darkTheme = createMuiTheme({
   overrides,
 });
 
-export { lightTheme, darkTheme };
+export { colors, lightTheme, darkTheme };
