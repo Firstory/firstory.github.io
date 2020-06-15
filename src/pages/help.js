@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Typography from '@material-ui/core/Typography';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import styles from '../components/Help/Help.module.css';
@@ -12,15 +13,25 @@ function Help({ data }) {
     <Layout>
       <Seo title="幫助中心" />
       <ArticleContainer>
-        <h1 className={styles.title}>幫助中心</h1>
+        <Typography
+          variant="h4"
+          component="h1"
+          style={{ marginBottom: '24px' }}
+        >
+          幫助中心
+        </Typography>
         <ul className={styles.tagsRow}>
           {tags.map(({ fieldValue }) => {
             const sectionTitle = sectionsTitle[fieldValue] || fieldValue;
             return (
               <li>
-                <Link className={styles.linkItem} to={`/help/${fieldValue}/`}>
+                <Typography
+                  component={Link}
+                  className={styles.linkItem}
+                  to={`/help/${fieldValue}/`}
+                >
                   {sectionTitle}
-                </Link>
+                </Typography>
               </li>
             );
           })}

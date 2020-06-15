@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Typography from '@material-ui/core/Typography';
+import MuiLink from '@material-ui/core/Link';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import ArticleContainer from '../components/ArticleContainer';
@@ -19,22 +23,25 @@ function BlogPostTemplate({ data, pageContext, location }) {
       <ArticleContainer>
         <article>
           <header>
-            <ol className={styles.breadcrumbs}>
-              <li>
-                <Link to="/help/">幫助中心</Link>
-              </li>
-              <li>
-                <Link to={`/help/${section}/`}>{sectionTitle}</Link>
-              </li>
-            </ol>
-            <h1
+            <Breadcrumbs
+              separator={<NavigateNextIcon fontSize="small" />}
+              aria-label="breadcrumb"
+            >
+              <MuiLink component={Link} color="inherit" href="/help">
+                幫助中心
+              </MuiLink>
+              <Typography color="textPrimary">{sectionTitle}</Typography>
+            </Breadcrumbs>
+            <Typography
+              variant="h4"
+              component="h1"
               style={{
                 marginTop: rhythm(1),
                 marginBottom: '24px',
               }}
             >
               {sectionsTitle[section] || section}
-            </h1>
+            </Typography>
           </header>
           <ul>
             {edges.map(({ node }) => {
@@ -45,9 +52,13 @@ function BlogPostTemplate({ data, pageContext, location }) {
                     marginBottom: rhythm(1 / 4),
                   }}
                 >
-                  <Link className={styles.linkItem} to={node.fields.slug}>
+                  <Typography
+                    component={Link}
+                    className={styles.linkItem}
+                    to={node.fields.slug}
+                  >
                     {title}
-                  </Link>
+                  </Typography>
                 </li>
               );
             })}

@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Typography from '@material-ui/core/Typography';
+import MuiLink from '@material-ui/core/Link';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import ArticleContainer from '../components/ArticleContainer';
-import styles from '../components/Help/Help.module.css';
 import { rhythm } from '../utils/typography';
 import sectionsTitle from './sections-title.json';
 
 function BlogPostTemplate({ data, pageContext, location }) {
-  const { slug } = pageContext;
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { title, section, description } = post.frontmatter;
@@ -21,26 +23,33 @@ function BlogPostTemplate({ data, pageContext, location }) {
         <article>
           <header>
             {section ? (
-              <ol className={styles.breadcrumbs}>
-                <li>
-                  <Link to="/help/">幫助中心</Link>
-                </li>
-                <li>
-                  <Link to={`/help/${section}/`}>{sectionTitle}</Link>
-                </li>
-                <li>
-                  <Link to={slug}>{title}</Link>
-                </li>
-              </ol>
+              <Breadcrumbs
+                separator={<NavigateNextIcon fontSize="small" />}
+                aria-label="breadcrumb"
+              >
+                <MuiLink component={Link} color="inherit" href="/help">
+                  幫助中心
+                </MuiLink>
+                <MuiLink
+                  component={Link}
+                  color="inherit"
+                  href={`/help/${section}`}
+                >
+                  {sectionTitle}
+                </MuiLink>
+                <Typography color="textPrimary">{title}</Typography>
+              </Breadcrumbs>
             ) : null}
-            <h1
+            <Typography
+              variant="h4"
+              component="h1"
               style={{
                 marginTop: rhythm(1),
                 marginBottom: '24px',
               }}
             >
               {title}
-            </h1>
+            </Typography>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
