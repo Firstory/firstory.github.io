@@ -57,7 +57,7 @@ function Help({ data }) {
                             href={externalLink}
                             className={classes.link}
                           >
-                              {node.fields.slug} {node.frontmatter.title}
+                            {node.frontmatter.title}
                           </Typography>
                         </li>
                       );
