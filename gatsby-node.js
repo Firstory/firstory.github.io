@@ -22,6 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
                 section
+                externalLink
               }
             }
           }
@@ -41,13 +42,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.allMdx.edges;
   posts.forEach(({ node }, index) => {
-    createPage({
-      path: node.fields.slug,
-      component: blogPostTemplate,
-      context: {
-        slug: node.fields.slug,
-      },
-    });
+    if (!node.frontmatter.externalLink) {
+      createPage({
+        path: node.fields.slug,
+        component: blogPostTemplate,
+        context: {
+          slug: node.fields.slug,
+        },
+      });
+    }
   });
 
   const sections = result.data.sectionsGroup.group;
@@ -65,14 +68,6 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode });
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    });
-  }
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode });
     createNodeField({

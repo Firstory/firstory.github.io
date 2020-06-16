@@ -47,17 +47,21 @@ function Help({ data }) {
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <ul className={classes.list}>
-                    {edges.map(({ node }) => (
-                      <li key={node.fields.slug} className={classes.item}>
-                        <Typography
-                          component={Link}
-                          to={node.fields.slug}
-                          className={classes.link}
-                        >
-                          {node.frontmatter.title}
-                        </Typography>
-                      </li>
-                    ))}
+                    {edges.map(({ node }) => {
+                      const { externalLink } = node.frontmatter;
+                      return (
+                        <li key={node.fields.slug} className={classes.item}>
+                          <Typography
+                            component={externalLink ? 'a' : Link}
+                            to={externalLink ? null : node.fields.slug}
+                            href={externalLink}
+                            className={classes.link}
+                          >
+                              {node.fields.slug} {node.frontmatter.title}
+                          </Typography>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
@@ -83,6 +87,7 @@ export const pageQuery = graphql`
             }
             frontmatter {
               title
+              externalLink
             }
           }
         }

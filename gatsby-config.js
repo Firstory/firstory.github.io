@@ -77,5 +77,32 @@ module.exports = {
       },
     },
     `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.nodes.map(node => {
+            return {
+              url: `${site.siteMetadata.siteUrl}${node.path}`,
+              changefreq: `monthly`,
+              priority: 0.9,
+            };
+          }),
+      },
+    },
   ],
 };
