@@ -36,11 +36,13 @@ function SectionTemplate({ data, pageContext, location }) {
         <ul>
           {edges.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug;
+            const { externalLink } = node.frontmatter;
             return (
               <li key={title} className={classes.item}>
                 <Typography
-                  component={Link}
-                  to={node.fields.slug}
+                  component={externalLink ? 'a' : Link}
+                  to={externalLink ? null : node.fields.slug}
+                  href={externalLink}
                   className={classes.link}
                 >
                   {title}
@@ -76,6 +78,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             section
+            externalLink
           }
         }
       }
