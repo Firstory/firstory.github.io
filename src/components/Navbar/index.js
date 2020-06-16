@@ -70,6 +70,8 @@ const items = [
       href: 'https://open.firstory.me',
       target: '_blank',
       rel: 'noopener',
+      variant: 'contained',
+      color: 'primary',
     },
     text: '瀏覽節目',
   },
@@ -79,8 +81,10 @@ const items = [
       href: 'https://studio.firstory.me',
       target: '_blank',
       rel: 'noopener',
+      variant: 'contained',
+      color: 'primary',
     },
-    text: '登入',
+    text: '免費開始',
   },
 ];
 
