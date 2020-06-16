@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        postsRemark: allMarkdownRemark(
+        allMdx(
           filter: { fields: { slug: { regex: "/(policy|help)/" } } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
@@ -26,7 +26,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-        sectionsGroup: allMarkdownRemark(limit: 2000) {
+        sectionsGroup: allMdx(limit: 2000) {
           group(field: frontmatter___section) {
             fieldValue
           }
@@ -39,13 +39,13 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  const posts = result.data.postsRemark.edges;
-  posts.forEach((post, index) => {
+  const posts = result.data.allMdx.edges;
+  posts.forEach(({ node }, index) => {
     createPage({
-      path: post.node.fields.slug,
+      path: node.fields.slug,
       component: blogPostTemplate,
       context: {
-        slug: post.node.fields.slug,
+        slug: node.fields.slug,
       },
     });
   });
@@ -69,6 +69,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
+      node,
+      value,
+    });
+  }
+  if (node.internal.type === 'Mdx') {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: 'slug',
       node,
       value,
     });

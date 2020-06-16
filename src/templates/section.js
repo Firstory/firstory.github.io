@@ -1,75 +1,60 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import MuiLink from '@material-ui/core/Link';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import ArticleContainer from '../components/ArticleContainer';
-import styles from '../components/Help/Help.module.css';
-import { rhythm } from '../utils/typography';
 import sectionsTitle from './sections-title.json';
 
-function BlogPostTemplate({ data, pageContext, location }) {
+const useStyles = makeStyles(theme => ({
+  item: {
+    marginBottom: theme.spacing(1),
+  },
+  link: {
+    color: theme.palette.text.primary,
+  },
+}));
+
+function SectionTemplate({ data, pageContext, location }) {
+  const classes = useStyles();
   const { section } = pageContext;
-  const { edges } = data.allMarkdownRemark;
+  const { edges } = data.allMdx;
   const siteTitle = data.site.siteMetadata.title;
   const sectionTitle = sectionsTitle[section] || section;
 
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title={`幫助中心 > ${sectionTitle}`} />
-      <ArticleContainer>
-        <article>
-          <header>
-            <Breadcrumbs
-              separator={<NavigateNextIcon fontSize="small" />}
-              aria-label="breadcrumb"
-            >
-              <MuiLink component={Link} color="inherit" href="/help">
-                幫助中心
-              </MuiLink>
-              <Typography color="textPrimary">{sectionTitle}</Typography>
-            </Breadcrumbs>
-            <Typography
-              variant="h4"
-              component="h1"
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: '24px',
-              }}
-            >
-              {sectionsTitle[section] || section}
-            </Typography>
-          </header>
-          <ul>
-            {edges.map(({ node }) => {
-              const title = node.frontmatter.title || node.fields.slug;
-              return (
-                <li
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
+      <ArticleContainer
+        breadcrumbs={[
+          { title: '幫助中心', link: '/help' },
+          { title: sectionTitle },
+        ]}
+        title={sectionTitle}
+      >
+        <ul>
+          {edges.map(({ node }) => {
+            const title = node.frontmatter.title || node.fields.slug;
+            return (
+              <li key={title} className={classes.item}>
+                <Typography
+                  component={Link}
+                  to={node.fields.slug}
+                  className={classes.link}
                 >
-                  <Typography
-                    component={Link}
-                    className={styles.linkItem}
-                    to={node.fields.slug}
-                  >
-                    {title}
-                  </Typography>
-                </li>
-              );
-            })}
-          </ul>
-        </article>
+                  {title}
+                </Typography>
+              </li>
+            );
+          })}
+        </ul>
       </ArticleContainer>
     </Layout>
   );
 }
 
-export default BlogPostTemplate;
+export default SectionTemplate;
 
 export const pageQuery = graphql`
   query SectionQuery($section: String!) {
@@ -78,7 +63,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       limit: 2000
       sort: { fields: [frontmatter___order], order: ASC }
       filter: { frontmatter: { section: { eq: $section } } }
