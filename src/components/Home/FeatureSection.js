@@ -86,6 +86,40 @@ function useFeatureData() {
         bottom: <PlatformRow />,
       },
       {
+        subtitle: '讓聽眾用最簡單的方式支持你',
+        title: '創作者贊助金流服務',
+        description: `透過我們的創作者專屬連結，
+讓在任何平台收聽的粉絲都能直接贊助你。`,
+        color: '#f95e76',
+        backgroundColor: '#ffe6ea',
+        image: imgMap.donate,
+        bottom: (
+          <div className={classes.buttonRow}>
+            <Button
+              component="a"
+              href="https://medium.com/firstory/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-firstory-%E7%87%9F%E5%88%A9%E5%8A%9F%E8%83%BD%E8%88%87%E6%8F%90%E9%A0%98-567853997d93"
+              target="_blank"
+              rel="noopener"
+              variant="contained"
+              size="large"
+              className={classes.donateButton}
+            >
+              如何設定贊助
+            </Button>
+          </div>
+        ),
+      },
+      {
+        subtitle: '了解聽眾最直接的回饋',
+        title: 'Podcast 整合留言板功能',
+        description: `受夠 Podcast 不能留言、聽眾要東奔西走才能找到你？
+我們為每一集節目都建了一個留言板，
+聽眾可以直接在這裡和你互動。`,
+        color: '#f6a041',
+        backgroundColor: '#fdf4ea',
+        image: imgMap.comment,
+      },
+      {
         subtitle: '找到你的第一批聽眾',
         title: 'Podcast 社群推廣服務',
         description: `透過 Instagram、Telegram 等社群平台，
@@ -125,40 +159,6 @@ function useFeatureData() {
                 {button.text}
               </Button>
             ))}
-          </div>
-        ),
-      },
-      {
-        subtitle: '了解聽眾最直接的回饋',
-        title: 'Podcast 整合留言板功能',
-        description: `受夠 Podcast 不能留言、聽眾要東奔西走才能找到你？
-我們為每一集節目都建了一個留言板，
-聽眾可以直接在這裡和你互動。`,
-        color: '#f6a041',
-        backgroundColor: '#fdf4ea',
-        image: imgMap.comment,
-      },
-      {
-        subtitle: '讓聽眾用最簡單的方式支持你',
-        title: '創作者贊助金流服務',
-        description: `透過我們的創作者專屬連結，
-讓在任何平台收聽的粉絲都能直接贊助你。`,
-        color: '#f95e76',
-        backgroundColor: '#ffe6ea',
-        image: imgMap.donate,
-        bottom: (
-          <div className={classes.buttonRow}>
-            <Button
-              component="a"
-              href="https://medium.com/firstory/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-firstory-%E7%87%9F%E5%88%A9%E5%8A%9F%E8%83%BD%E8%88%87%E6%8F%90%E9%A0%98-567853997d93"
-              target="_blank"
-              rel="noopener"
-              variant="contained"
-              size="large"
-              className={classes.donateButton}
-            >
-              如何設定贊助
-            </Button>
           </div>
         ),
       },
