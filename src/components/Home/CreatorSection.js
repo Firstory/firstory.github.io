@@ -126,6 +126,7 @@ Firstory 給人一種，
       },
     ];
     const others = [
+      { id: 'ck56l1kigq8910b26zcwq4yw3', image: 'ycfintech' },
       { id: 'cjzryn64q34i607580oyblh1u', image: 'unlock-the-earth' },
       { id: 'ck07hgbx84y4z0786x4hxz28v', image: 'sound-in-taipei' },
       { id: 'cjzdxzm7ic0vq0758o2u4rlnf', image: 'two-girls' },
