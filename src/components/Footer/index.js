@@ -39,8 +39,8 @@ const footers = [
     },
     {
       props: {
-        component: Link,
-        to: '/help',
+        component: 'a',
+        href: 'https://intercom.help/firstory',
       },
       text: '幫助中心',
     },

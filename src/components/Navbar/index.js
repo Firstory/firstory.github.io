@@ -52,8 +52,10 @@ const useStyles = makeStyles(theme => ({
 const items = [
   {
     props: {
-      component: Link,
-      to: '/help',
+      component: 'a',
+      href: 'https://intercom.help/firstory',
+      target: '_blank',
+      rel: 'noopener',
     },
     text: '幫助中心',
   },
