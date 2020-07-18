@@ -98,9 +98,9 @@ const footers = [
     {
       props: {
         component: 'a',
-        href: 'mailto:firstory.inc@gmail.com',
+        href: 'mailto:support@firstory.me',
       },
-      text: 'Email: firstory.inc@gmail.com',
+      text: 'Email: support@firstory.me',
     },
   ],
 ];
