@@ -17,13 +17,13 @@ export const featureList = {
   scheduling: free | premium | enterprise,
   customUrl: free | premium | enterprise,
   removeWaterMark: free | premium | enterprise,
-  multiMember: free | premium | enterprise,
+  multiShow: premium | enterprise,
   paywall: premium | enterprise | developing,
   sponsorship: premium | enterprise | developing,
   advancedAnalytics: premium | enterprise | developing,
   topicPublish: premium | enterprise | developing,
   advancedSocialShare: premium | enterprise | developing,
-  multiShow: enterprise | developing,
+  multiMember: enterprise | developing,
 };
 
 export const plans = {
