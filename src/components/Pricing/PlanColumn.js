@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import cx from 'classnames';
 import { ThemeProvider, makeStyles } from '@material-ui/styles';
 import Typography from '@material-ui/core/Typography';
@@ -9,19 +10,18 @@ import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import CloseIcon from '@material-ui/icons/Close';
 import Rocket from './Rocket';
 import { plans, developing, planBits, featureList } from './constants';
-import { i18n } from '../../i18n';
 import { lightTheme, darkTheme } from '../../theme';
 
 const planNames = {
-  FREE: '基本方案',
-  PREMIUM: '標準方案',
-  ENTERPRISE: '企業方案',
+  FREE: 'pricing.plan.free',
+  PREMIUM: 'pricing.plan.premium',
+  ENTERPRISE: 'pricing.plan.enterprise',
 };
 
 const buttonTexts = {
-  FREE: '馬上開始',
-  PREMIUM: '限時終生免費',
-  ENTERPRISE: '聯絡我們',
+  FREE: 'pricing.plan.freeButton',
+  PREMIUM: 'pricing.plan.premiumButton',
+  ENTERPRISE: 'pricing.plan.enterpriseButton',
 };
 
 const limits = {
@@ -53,6 +53,7 @@ const useStyles = makeStyles(theme => ({
     color: lightTheme.palette.primary.main,
     padding: theme.spacing(1, 2),
     transform: 'translate(-50%, -50%)',
+    whiteSpace: 'pre-line',
   },
   hotSaleText: {
     textAlign: 'center',
@@ -133,9 +134,7 @@ function PlanColumn({ plan, active }) {
             <Rocket alt="Rocket" className={classes.rocket} />
             <Paper className={classes.hotSale}>
               <Typography color="primary" className={classes.hotSaleText}>
-                支持防疫
-                <br />
-                限時免費
+                <FormattedMessage id="pricing.hotSale" />
               </Typography>
             </Paper>
           </>
@@ -145,7 +144,7 @@ function PlanColumn({ plan, active }) {
           color="textPrimary"
           className={cx(classes.title)}
         >
-          {planNames[plan]}
+          <FormattedMessage id={planNames[plan]} />
         </Typography>
         {plan === plans.PREMIUM ? (
           <>
@@ -153,21 +152,23 @@ function PlanColumn({ plan, active }) {
               variant="h6"
               className={cx(classes.price, classes.premiumText)}
             >
-              NT$249 / 月
+              <FormattedMessage id="pricing.monthPrice" />
             </Typography>
             <Typography
               variant="caption"
               component="p"
               className={cx(classes.price, classes.premiumText)}
             >
-              年繳
+              <FormattedMessage id="pricing.anually" />
               <br />
-              或者月繳 NT$299 / 月
+              <FormattedMessage id="pricing.orMonthPrice" />
             </Typography>
           </>
         ) : (
           <Typography variant="h6" className={classes.price}>
-            {plan === plans.FREE ? '免費' : '聯絡我們'}
+            <FormattedMessage
+              id={plan === plans.FREE ? 'pricing.free' : 'pricing.contactUs'}
+            />
           </Typography>
         )}
         <div className={classes.buttonContainer}>
@@ -185,19 +186,27 @@ function PlanColumn({ plan, active }) {
             target="_blank"
             rel="noopener"
           >
-            {buttonTexts[plan]}
+            <FormattedMessage id={buttonTexts[plan]} />
           </Button>
         </div>
         <Typography variant="h6" color="default" className={classes.limit}>
-          每個月
-          <Typography
-            variant="h4"
-            color={plan === plans.PREMIUM ? 'default' : 'secondary'}
-            className={classes.limitTime}
-          >
-            {limits[plan] ? `${limits[plan]} 小時` : '無限制'}
-          </Typography>
-          上傳時間
+          <FormattedMessage
+            id="pricing.monthlyQuota"
+            values={{
+              limit: (
+                <Typography
+                  variant="h4"
+                  color={plan === plans.PREMIUM ? 'default' : 'secondary'}
+                  className={classes.limitTime}
+                >
+                  <FormattedMessage
+                    id={limits[plan] ? 'pricing.hours' : 'pricing.noLimit'}
+                    values={{ hours: limits[plan] }}
+                  />
+                </Typography>
+              ),
+            }}
+          />
         </Typography>
         {Object.keys(featureList).map(f => {
           let className;
@@ -222,7 +231,7 @@ function PlanColumn({ plan, active }) {
             <div key={f} className={classes.feature}>
               <Icon className={cx(classes.featureIcon, className)} alt={alt} />
               <Typography className={cx(classes.featureText, className)}>
-                {i18n.zh.pricing[f]}
+                <FormattedMessage id={`pricing.${f}`} />
               </Typography>
             </div>
           );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
@@ -114,17 +115,17 @@ function FeatureRow({
               component="h3"
               className={classes.subtitle}
             >
-              {subtitle}
+              <FormattedMessage id={subtitle} />
             </Typography>
             <Typography variant="h4" component="h2" className={classes.title}>
-              {title}
+              <FormattedMessage id={title} />
             </Typography>
             <Typography
               variant="h6"
               component="p"
               className={classes.description}
             >
-              {description}
+              <FormattedMessage id={description} />
             </Typography>
             <div>{bottom}</div>
           </div>

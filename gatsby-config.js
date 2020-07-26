@@ -110,5 +110,12 @@ module.exports = {
         appId: 'pcpac0sa',
       },
     },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'en',
+        prefixDefault: false,
+      },
+    },
   ],
 };

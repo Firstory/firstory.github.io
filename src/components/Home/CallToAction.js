@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { makeStyles } from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -28,7 +29,7 @@ function CallToAction() {
   return (
     <Container className={classes.container}>
       <Typography variant="h4" color="primary" className={classes.title}>
-        五個步驟，你的聲音即將被世界聽見。
+        <FormattedMessage id="cta.title" />
       </Typography>
       <Button
         variant="contained"
@@ -40,7 +41,7 @@ function CallToAction() {
         rel="noopener"
         className={classes.button}
       >
-        直接開始
+        <FormattedMessage id="cta.button" />
       </Button>
     </Container>
   );

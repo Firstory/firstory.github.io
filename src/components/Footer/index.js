@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Link } from 'gatsby';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
@@ -35,35 +36,35 @@ const footers = [
         component: Link,
         to: '/pricing',
       },
-      text: '資費方案',
+      textId: 'nav.pricing',
     },
     {
       props: {
         component: 'a',
         href: 'https://intercom.help/firstory',
       },
-      text: '幫助中心',
+      textId: 'nav.help',
     },
     {
       props: {
         component: Link,
         to: '/policy',
       },
-      text: '服務條款',
+      textId: 'nav.policy',
     },
     {
       props: {
         component: 'a',
         href: 'https://open.firstory.me',
       },
-      text: '瀏覽節目',
+      textId: 'nav.browseShow',
     },
     {
       props: {
         component: 'a',
         href: 'https://studio.firstory.me',
       },
-      text: '開始 Podcast',
+      textId: 'nav.start',
     },
   ],
   [
@@ -118,7 +119,11 @@ function Footer() {
                 {column.map((item, j) => (
                   <div key={j} className={classes.linkContainer}>
                     <MuiLink className={classes.link} {...item.props}>
-                      {item.text}
+                      {item.textId ? (
+                        <FormattedMessage id={item.textId} />
+                      ) : (
+                        item.text
+                      )}
                     </MuiLink>
                   </div>
                 ))}

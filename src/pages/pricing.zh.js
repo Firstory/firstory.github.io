@@ -1,16 +1,14 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+import { IntlProvider } from 'react-intl';
 import Pricing from '../components/Pricing';
+import messages from '../i18n/zh';
 
 function Home() {
   return (
-    <Layout>
-      <Seo title="資費方案" />
+    <IntlProvider locale="zh" messages={messages}>
       <Pricing />
-    </Layout>
+    </IntlProvider>
   );
 }
 
 export default Home;
-

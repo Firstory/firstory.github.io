@@ -1,4 +1,6 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import cx from 'classnames';
 import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -12,6 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Logo from './Logo';
+import LanguagePicker from './LanguagePicker';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -39,6 +42,9 @@ const useStyles = makeStyles(theme => ({
       display: 'none',
     },
   },
+  menuIcon: {
+    marginLeft: theme.spacing(1),
+  },
   hideOnLarge: {
     [theme.breakpoints.up('md')]: {
       display: 'none',
@@ -57,14 +63,14 @@ const items = [
       target: '_blank',
       rel: 'noopener',
     },
-    text: '幫助中心',
+    text: 'nav.help',
   },
   {
     props: {
       component: Link,
       to: '/pricing',
     },
-    text: '資費方案',
+    text: 'nav.pricing',
   },
   {
     props: {
@@ -75,7 +81,7 @@ const items = [
       variant: 'contained',
       color: 'primary',
     },
-    text: '瀏覽節目',
+    text: 'nav.browseShow',
   },
   {
     props: {
@@ -86,11 +92,11 @@ const items = [
       variant: 'contained',
       color: 'primary',
     },
-    text: '免費開始',
+    text: 'nav.startForFree',
   },
 ];
 
-function Navbar() {
+function Navbar({ pathname }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -115,12 +121,13 @@ function Navbar() {
             {...item.props}
             className={classes.toolbarButton}
           >
-            {item.text}
+            <FormattedMessage id={item.text} />
           </Button>
         ))}
+        <LanguagePicker pathname={pathname} />
         <IconButton
           edge="start"
-          className={classes.hideOnLarge}
+          className={cx(classes.menuIcon, classes.hideOnLarge)}
           color="inherit"
           aria-label="menu"
           onClick={handleOpen}
@@ -131,7 +138,9 @@ function Navbar() {
           <List className={classes.list}>
             {items.map(item => (
               <ListItem button key={item.text} {...item.props}>
-                <ListItemText primary={item.text} />
+                <FormattedMessage id={item.text}>
+                  {text => <ListItemText primary={text} />}
+                </FormattedMessage>
               </ListItem>
             ))}
           </List>

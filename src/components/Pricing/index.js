@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { makeStyles } from '@material-ui/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
@@ -6,6 +7,8 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 import PlanColumn from './PlanColumn';
 import ComingSoon from './ComingSoon';
+import Layout from '../Layout';
+import Seo from '../Seo';
 import { plans } from './constants';
 
 const useStyles = makeStyles(theme => ({
@@ -43,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   iconHint: {
     width: 20,
     height: 20,
-  }
+  },
 }));
 
 function Pricing() {
@@ -51,40 +54,43 @@ function Pricing() {
   const [plan, setPlan] = React.useState(plans.PREMIUM);
 
   return (
-    <Container className={classes.container}>
-      <Typography variant="h4" className={classes.title}>
-        升級成為 Firstory Infinity 讓您的節目飛上太空！
-      </Typography>
-      <Typography variant="h5" className={classes.subtitle}>
-        防疫期間在家錄 Podcast 最安全，現在註冊即享有終身免費！
-      </Typography>
-      <div className={classes.buttonRow}>
-        <ButtonGroup disableElevation color="secondary">
-          {[
-            { plan: plans.FREE, text: '基本方案' },
-            { plan: plans.PREMIUM, text: '標準方案' },
-            { plan: plans.ENTERPRISE, text: '企業方案' },
-          ].map(p => (
-            <Button
-              key={p.text}
-              variant={plan === p.plan ? 'contained' : 'outlined'}
-              onClick={() => setPlan(p.plan)}
-            >
-              {p.text}
-            </Button>
-          ))}
-        </ButtonGroup>
-      </div>
-      <div className={classes.planSection}>
-        <PlanColumn plan="FREE" active={plan === plans.FREE} />
-        <PlanColumn plan="PREMIUM" active={plan === plans.PREMIUM} />
-        <PlanColumn plan="ENTERPRISE" active={plan === plans.ENTERPRISE} />
-      </div>
-      <Typography variant="caption" className={classes.comingSoon}>
-        <ComingSoon alt="Coming Soon" className={classes.iconHint} />
-        代表即將推出
-      </Typography>
-    </Container>
+    <Layout pathname="/pricing">
+      <Seo title="資費方案" />
+      <Container className={classes.container}>
+        <Typography variant="h4" className={classes.title}>
+          <FormattedMessage id="pricing.title" />
+        </Typography>
+        <Typography variant="h5" className={classes.subtitle}>
+          <FormattedMessage id="pricing.covid19Free" />
+        </Typography>
+        <div className={classes.buttonRow}>
+          <ButtonGroup disableElevation color="secondary">
+            {[
+              { plan: plans.FREE, text: '基本方案' },
+              { plan: plans.PREMIUM, text: '標準方案' },
+              { plan: plans.ENTERPRISE, text: '企業方案' },
+            ].map(p => (
+              <Button
+                key={p.text}
+                variant={plan === p.plan ? 'contained' : 'outlined'}
+                onClick={() => setPlan(p.plan)}
+              >
+                {p.text}
+              </Button>
+            ))}
+          </ButtonGroup>
+        </div>
+        <div className={classes.planSection}>
+          <PlanColumn plan="FREE" active={plan === plans.FREE} />
+          <PlanColumn plan="PREMIUM" active={plan === plans.PREMIUM} />
+          <PlanColumn plan="ENTERPRISE" active={plan === plans.ENTERPRISE} />
+        </div>
+        <Typography variant="caption" className={classes.comingSoon}>
+          <ComingSoon alt="Coming Soon" className={classes.iconHint} />
+          <FormattedMessage id="pricing.comingSoon" />
+        </Typography>
+      </Container>
+    </Layout>
   );
 }
 

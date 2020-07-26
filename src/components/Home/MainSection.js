@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { makeStyles } from '@material-ui/styles';
@@ -25,6 +26,7 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 'bold',
   },
   description: {
+    whiteSpace: 'pre-line',
     marginBottom: theme.spacing(6),
   },
   button: {
@@ -68,13 +70,10 @@ function MainSection() {
     <div className={classes.container}>
       <Container>
         <Typography variant="h3" component="h1" className={classes.title}>
-          你的聲音，無遠弗屆
+          <FormattedMessage id="home.title" />
         </Typography>
         <Typography variant="h6" component="p" className={classes.description}>
-          我們相信每個人都是故事人，相信聲音和分享的力量。
-          <br />
-          只需簡單錄製，剩下發布就交給 Firstory， <br />
-          我們是 Podcaster 最強的後盾
+          <FormattedMessage id="home.hero" />
         </Typography>
       </Container>
       <Button
@@ -87,7 +86,7 @@ function MainSection() {
         target="_blank"
         rel="noopener"
       >
-        免費開始
+        <FormattedMessage id="nav.startForFree" />
       </Button>
       <div className={classes.backgroundContainer}>
         <Img

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import cx from 'classnames';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
@@ -185,7 +186,7 @@ function CreatorSection() {
                     <Link href={r.url} target="_blank" rel="noopener">
                       {r.title}
                     </Link>
-                    ，主持人/製作人
+                    ，<FormattedMessage id="creator.host" />
                   </Typography>
                 </div>
               </CardContent>
@@ -194,7 +195,7 @@ function CreatorSection() {
         ))}
       </Grid>
       <Typography variant="h5" className={classes.otherTitle}>
-        採用我們服務的 Podcaster
+        <FormattedMessage id="creator.podcasterUsing" />
       </Typography>
       <div className={classes.otherRow}>
         {others.map(({ id, url, name, image }) => (
@@ -213,11 +214,16 @@ function CreatorSection() {
         ))}
       </div>
       <Typography variant="h5" className={classes.otherTitle}>
-        超過{' '}
-        <Typography color="primary" component="span" variant="h5">
-          1000+
-        </Typography>{' '}
-        的 Podcaster 與我們一同前進。
+        <FormattedMessage
+          id="creator.podcasterCount"
+          values={{
+            span: chunks => (
+              <Typography color="primary" component="span" variant="h5">
+                1000+
+              </Typography>
+            ),
+          }}
+        />
       </Typography>
     </Container>
   );

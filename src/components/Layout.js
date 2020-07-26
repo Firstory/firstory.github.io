@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/styles';
 import MuiLink from '@material-ui/core/Link';
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Layout({ hideCampaign, children }) {
+function Layout({ hideCampaign, children, pathname }) {
   const classes = useStyles();
 
   return (
@@ -34,12 +35,12 @@ function Layout({ hideCampaign, children }) {
             to="/content-startup"
             className={classes.link}
           >
-            加入我們的內容啟動計畫，讓 Firstory 成為你創作路上第一位贊助者。
+            <FormattedMessage id="nav.contentStartup" />
             <RightIcon />
           </MuiLink>
         </div>
       )}
-      <Navbar />
+      <Navbar pathname={pathname} />
       <div>{children}</div>
       <Footer />
     </div>

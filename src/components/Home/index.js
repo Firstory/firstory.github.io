@@ -1,10 +1,10 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import Seo from '../components/Seo';
-import MainSection from '../components/Home/MainSection';
-import CreatorSection from '../components/Home/CreatorSection';
-import FeatureSection from '../components/Home/FeatureSection';
-import CallToAction from '../components/Home/CallToAction';
+import Layout from '../Layout';
+import Seo from '../Seo';
+import MainSection from './MainSection';
+import CreatorSection from './CreatorSection';
+import FeatureSection from './FeatureSection';
+import CallToAction from './CallToAction';
 
 function Home() {
   return (
