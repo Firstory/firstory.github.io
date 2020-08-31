@@ -20,7 +20,7 @@ const planNames = {
 
 const buttonTexts = {
   FREE: 'pricing.plan.freeButton',
-  PREMIUM: 'pricing.plan.premiumButton',
+  PREMIUM: 'pricing.free',
   ENTERPRISE: 'pricing.plan.enterpriseButton',
 };
 
@@ -95,6 +95,11 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(4, 0),
   },
   button: {},
+  premiumButton: {
+    height: 60,
+    width: 120,
+    fontSize: 20,
+  },
   limit: {
     textAlign: 'center',
     marginBottom: theme.spacing(4),
@@ -152,16 +157,20 @@ function PlanColumn({ plan, active }) {
               variant="h6"
               className={cx(classes.price, classes.premiumText)}
             >
-              <FormattedMessage id="pricing.monthPrice" />
+              <del>
+                <FormattedMessage id="pricing.monthPrice" />
+              </del>
             </Typography>
             <Typography
               variant="caption"
               component="p"
               className={cx(classes.price, classes.premiumText)}
             >
-              <FormattedMessage id="pricing.anually" />
-              <br />
-              <FormattedMessage id="pricing.orMonthPrice" />
+              <del>
+                <FormattedMessage id="pricing.anually" />
+                <br />
+                <FormattedMessage id="pricing.orMonthPrice" />
+              </del>
             </Typography>
           </>
         ) : (
@@ -173,7 +182,9 @@ function PlanColumn({ plan, active }) {
         )}
         <div className={classes.buttonContainer}>
           <Button
-            className={classes.button}
+            className={cx(classes.button, {
+              [classes.premiumButton]: plan === plans.PREMIUM,
+            })}
             variant={plan === plans.PREMIUM ? 'contained' : 'outlined'}
             color={plan === plans.PREMIUM ? 'secondary' : 'default'}
             size="large"

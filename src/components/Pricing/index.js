@@ -68,7 +68,7 @@ function Pricing() {
             {[
               { plan: plans.FREE, text: '基本方案' },
               { plan: plans.PREMIUM, text: '標準方案' },
-              { plan: plans.ENTERPRISE, text: '企業方案' },
+              // { plan: plans.ENTERPRISE, text: '企業方案' },
             ].map(p => (
               <Button
                 key={p.text}
@@ -83,7 +83,9 @@ function Pricing() {
         <div className={classes.planSection}>
           <PlanColumn plan="FREE" active={plan === plans.FREE} />
           <PlanColumn plan="PREMIUM" active={plan === plans.PREMIUM} />
+          {/*
           <PlanColumn plan="ENTERPRISE" active={plan === plans.ENTERPRISE} />
+          */}
         </div>
         <Typography variant="caption" className={classes.comingSoon}>
           <ComingSoon alt="Coming Soon" className={classes.iconHint} />

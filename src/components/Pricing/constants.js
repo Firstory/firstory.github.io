@@ -18,12 +18,12 @@ export const featureList = {
   customUrl: free | premium | enterprise,
   removeWaterMark: free | premium | enterprise,
   multiShow: premium | enterprise,
-  paywall: premium | enterprise | developing,
-  sponsorship: premium | enterprise | developing,
-  advancedAnalytics: premium | enterprise | developing,
-  topicPublish: premium | enterprise | developing,
-  advancedSocialShare: premium | enterprise | developing,
-  multiMember: enterprise | developing,
+  advancedAnalytics: premium | enterprise,
+  sponsorship: premium | enterprise,
+  // topicPublish: premium | enterprise | developing,
+  // advancedSocialShare: premium | enterprise | developing,
+  // paywall: premium | enterprise | developing,
+  // multiMember: premium | enterprise | developing,
 };
 
 export const plans = {

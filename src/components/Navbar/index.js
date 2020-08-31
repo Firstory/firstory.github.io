@@ -124,7 +124,9 @@ function Navbar({ pathname }) {
             <FormattedMessage id={item.text} />
           </Button>
         ))}
+        {/*
         <LanguagePicker pathname={pathname} />
+        */}
         <IconButton
           edge="start"
           className={cx(classes.menuIcon, classes.hideOnLarge)}
